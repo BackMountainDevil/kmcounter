@@ -454,6 +454,7 @@ class Screenkey(Gtk.Window):
                 msg.destroy()
                 return False
 
+            ret = ret.decode("utf8")
             data = list(map(int, ret.split(' ')))
             self.options.geometry = data[0:4]
             self.options.window = data[4]
