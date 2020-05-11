@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from setuptools import setup
 
-setup(name='screenkey', version='0.9',
+setup(name='screenkey', version='0.10',
       description='A screencast tool to display keys',
 
       author='Pablo Seminario',

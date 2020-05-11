@@ -1,4 +1,10 @@
-screenkey 0.9
+SCREENKEY 0.10
+--------------
+
+- Switch to Python 3 and GTK 3, thanks to Yuto Tokunaga.
+
+
+SCREENKEY 0.9
 -------------
 
 - Ctrl+Ctrl detection now works correctly in more scenarios.
