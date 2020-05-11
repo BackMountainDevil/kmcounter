@@ -227,12 +227,13 @@ class Screenkey(Gtk.Window):
             y = g[1]
             w = g[2]
             h = g[3]
-            inverse_offset_x = g[4]
-            inverse_offset_y = g[5]
-            if inverse_offset_x:
-                x = geometry.width - x - w
-            if inverse_offset_y:
-                y = geometry.height - y - h
+            if len(g) == 6:
+                inverse_offset_x = g[4]
+                inverse_offset_y = g[5]
+                if inverse_offset_x:
+                    x = geometry.width - x - w
+                if inverse_offset_y:
+                    y = geometry.height - y - h
             area_geometry = [x, y, w, h]
         else:
             area_geometry = [geometry.x, geometry.y, geometry.width, geometry.height]
