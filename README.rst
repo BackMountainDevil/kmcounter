@@ -34,9 +34,10 @@ To install::
 
 Dependencies:
 
-- Python 2.7 (no Python 3 support yet)
-- PyGTK
-- Pycairo
+- Python 3.x (Python 2.x is no longer supported)
+- PyGObject
+- GTK 3 (via GI bindings)
+- Pycairo (python3-cairo)
 - setuptools (build only)
 - DistUtils-Extra (build only)
 - slop (https://github.com/naelstrof/slop)
@@ -45,11 +46,15 @@ Dependencies:
 
 Install dependencies (on Debian/Ubuntu)::
 
-  sudo apt-get install python-gtk2 python-setuptools python-distutils-extra
+  sudo apt-get install python3-gi gir1.2-gtk-3.0 python3-cairo
+  sudo apt-get install python3-setuptools python3-distutils-extra
 
 You can also install "screenkey" via ArchLinux's AUR package:
 
 https://aur.archlinux.org/packages/screenkey
+
+Note: Screenkey makes use of low-level X11 functions directly via
+``libX11.so.6``.
 
 
 Settings
