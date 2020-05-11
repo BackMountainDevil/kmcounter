@@ -42,12 +42,13 @@ Dependencies:
 - DistUtils-Extra (build only)
 - slop (https://github.com/naelstrof/slop)
 - FontAwesome_ (for multimedia symbols)
-- Python AppIndicator (required for Unity / GNOME Shell)
+- GIR AppIndicator (required for Unity / GNOME Shell)
 
 Install dependencies (on Debian/Ubuntu)::
 
   sudo apt-get install python3-gi gir1.2-gtk-3.0 python3-cairo
   sudo apt-get install python3-setuptools python3-distutils-extra
+  sudo apt-get install fonts-font-awesome gir1.2-appindicator3-0.1
 
 You can also install "screenkey" via ArchLinux's AUR package:
 
