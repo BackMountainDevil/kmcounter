@@ -188,6 +188,7 @@ class Screenkey(Gtk.Window):
     def update_colors(self):
         self.label.modify_fg(Gtk.StateFlags.NORMAL, Gdk.color_parse(self.options.font_color))
         self.bg_color = Gdk.color_parse(self.options.bg_color)
+        self.queue_draw()
 
 
     def on_draw(self, widget, cr):
