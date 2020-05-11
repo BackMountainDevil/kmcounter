@@ -760,10 +760,11 @@ class Screenkey(Gtk.Window):
 
     def make_systray(self):
         try:
-            import appindicator
-            self.systray = appindicator.Indicator(
-                APP_NAME, 'indicator-messages', appindicator.CATEGORY_APPLICATION_STATUS)
-            self.systray.set_status(appindicator.STATUS_ACTIVE)
+            gi.require_version('AppIndicator3', '0.1')
+            from gi.repository import AppIndicator3 as AppIndicator
+            self.systray = AppIndicator.Indicator.new(
+                APP_NAME, 'indicator-messages', AppIndicator.IndicatorCategory.APPLICATION_STATUS)
+            self.systray.set_status(AppIndicator.IndicatorStatus.ACTIVE)
             self.systray.set_attention_icon("indicator-messages-new")
             self.systray.set_icon("preferences-desktop-keyboard-shortcuts")
             self.systray.set_menu(self.menu)
