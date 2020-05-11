@@ -219,17 +219,29 @@ class Screenkey(Gtk.Window):
 
 
     def update_geometry(self, configure=False):
-        if self.options.position == 'fixed' and self.options.geometry is not None:
-            self.move(*self.options.geometry[0:2])
-            self.resize(*self.options.geometry[2:4])
+        geometry = self.get_screen().get_monitor_geometry(self.monitor)
+        if self.options.geometry is not None:
+
+            g = self.options.geometry
+            x = g[0]
+            y = g[1]
+            w = g[2]
+            h = g[3]
+            inverse_offset_x = g[4]
+            inverse_offset_y = g[5]
+            if inverse_offset_x:
+                x = geometry.width - x - w
+            if inverse_offset_y:
+                y = geometry.height - y - h
+            area_geometry = [x, y, w, h]
+        else:
+            area_geometry = [geometry.x, geometry.y, geometry.width, geometry.height]
+
+        if self.options.position == 'fixed':
+            self.move(*area_geometry[0:2])
+            self.resize(*area_geometry[2:4])
             self.update_font()
             return
-
-        if self.options.geometry is not None:
-            area_geometry = self.options.geometry
-        else:
-            geometry = self.get_screen().get_monitor_geometry(self.monitor)
-            area_geometry = [geometry.x, geometry.y, geometry.width, geometry.height]
 
         if self.options.font_size == 'large':
             window_height = 24 * area_geometry[3] // 100

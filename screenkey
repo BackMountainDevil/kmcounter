@@ -13,16 +13,20 @@ from argparse import ArgumentParser
 
 
 def geometry(string):
-    size = re.match(r'^(\d+)x(\d+)(\+\d+\+\d+)?$', string)
+    size = re.match(r'^(\d+)x(\d+)((\+|-)\d+(\+|-)\d+)?$', string)
     if size is None:
         raise TypeError
     wh = [int(size.group(1)), int(size.group(2))]
     if size.group(3) is None:
         xy = [0, 0]
+        offset = [False, False]
     else:
-        pos = re.match(r'^\+(\d+)\+(\d+)$', size.group(3))
-        xy = [int(pos.group(1)), int(pos.group(2))]
-    return xy + wh
+        pos = re.match(r'^(\+|-)(\d+)(\+|-)(\d+)$', size.group(3))
+        x = int(pos.group(2))
+        y = int(pos.group(4))
+        xy = [x, y]
+        offset = [pos.group(1) == '-', pos.group(3) == '-']
+    return xy + wh + offset
 
 
 def main():
