@@ -760,8 +760,8 @@ class Screenkey(Gtk.Window):
 
     def make_systray(self):
         try:
-            gi.require_version('AppIndicator3', '0.1')
             from gi.repository import AppIndicator3 as AppIndicator
+            gi.require_version('AppIndicator3', '0.1')
             self.systray = AppIndicator.Indicator.new(
                 APP_NAME, 'indicator-messages', AppIndicator.IndicatorCategory.APPLICATION_STATUS)
             self.systray.set_status(AppIndicator.IndicatorStatus.ACTIVE)
