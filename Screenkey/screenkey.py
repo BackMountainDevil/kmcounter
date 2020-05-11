@@ -523,7 +523,7 @@ class Screenkey(Gtk.Window):
                                  update_policy=IF_VALID,
                                  value=self.options.timeout)
         sb_time.set_increments(0.5, 1.0)
-        sb_time.set_range(0.5, 10.0)
+        sb_time.set_range(0, 300)
         sb_time.connect("value-changed", on_sb_time_changed)
         hbox_time.add(lbl_time1)
         hbox_time.add(sb_time)
