@@ -454,11 +454,12 @@ class Screenkey(Gtk.Window):
                 msg.destroy()
                 return False
 
-            data = map(int, ret.split(' '))
+            ret = ret.decode("utf8")
+            data = list(map(int, ret.split(' ')))
             self.options.geometry = data[0:4]
             self.options.window = data[4]
             if not self.options.window or \
-               self.options.window == self.get_screen().get_root_window().xid:
+               self.options.window == self.get_screen().get_root_window().get_xid():
                 # region selected, switch to fixed
                 self.options.window = None
                 self.options.position = 'fixed'
