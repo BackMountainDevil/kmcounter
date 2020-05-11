@@ -1,4 +1,8 @@
-from collections.abc import MutableMapping
+try:
+    from collections.abc import MutableMapping
+except ImportError:
+    # for python<3.3
+    from collections import MutableMapping
 
 import gettext
 gettext.install('screenkey')
