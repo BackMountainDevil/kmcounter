@@ -438,7 +438,7 @@ class Screenkey(Gtk.Window):
             if not self.get_property('visible'):
                 self.show()
             else:
-                self.on_label_change(self.label.get_text())
+                self.on_label_change(self.label.get_text(), True)
             self.logger.debug("Persistent changed: %s." % self.options.persist)
 
         def on_sb_compr_changed(widget, data=None):
