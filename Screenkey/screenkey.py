@@ -274,8 +274,8 @@ class Screenkey(Gtk.Window):
 
     def on_labelmngr_error(self):
         msg = Gtk.MessageDialog(parent=self,
-                                type=Gtk.MESSAGE_ERROR,
-                                buttons=Gtk.BUTTONS_OK,
+                                type=Gtk.MessageType.ERROR,
+                                buttons=Gtk.ButtonsType.OK,
                                 message_format="Error initializing Screenkey")
         text = _('Screenkey failed to initialize. This is usually a sign of an improperly '
                  'configured input method or desktop keyboard settings. Please see the <a '
