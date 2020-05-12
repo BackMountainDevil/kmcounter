@@ -222,7 +222,7 @@ class LabelManager(object):
             self.replace_mods[k] = self.get_repl_markup(data)
 
 
-    def update_text(self):
+    def update_text(self, synthetic=False):
         markup = ""
         recent = False
         stamp = datetime.now()
@@ -279,14 +279,18 @@ class LabelManager(object):
         if recent:
             markup += '</u>'
         self.logger.debug("Label updated: %s." % repr(markup))
-        self.listener(markup)
+        self.listener(markup, synthetic)
+
+
+    def queue_update(self):
+        self.update_text(True)
 
 
     def key_press(self, event):
         symbol = event.symbol.decode()
         if event is None:
             self.logger.debug("inputlistener failure: {}".format(str(self.kl.error)))
-            self.listener(None)
+            self.listener(None, None)
             return
         if event.pressed == False:
             self.logger.debug("Key released {:5}(ks): {}".format(event.keysym, symbol))

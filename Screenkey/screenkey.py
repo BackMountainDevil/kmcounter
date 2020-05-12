@@ -287,7 +287,7 @@ class Screenkey(Gtk.Window):
         self.quit(exit_status=os.EX_SOFTWARE)
 
 
-    def on_label_change(self, markup):
+    def on_label_change(self, markup, synthetic):
         if markup is None:
             self.on_labelmngr_error()
             return
@@ -306,8 +306,9 @@ class Screenkey(Gtk.Window):
             self.timer_hide.start()
         if self.timer_min:
             self.timer_min.cancel()
-        self.timer_min = Timer(self.options.recent_thr * 2, self.on_timeout_min)
-        self.timer_min.start()
+        if not synthetic:
+            self.timer_min = Timer(self.options.recent_thr * 2, self.on_timeout_min)
+            self.timer_min.start()
 
 
     def on_timeout_main(self):
@@ -318,7 +319,7 @@ class Screenkey(Gtk.Window):
 
 
     def on_timeout_min(self):
-        self.label.set_attributes()
+        self.labelmngr.queue_update()
 
 
     def restart_labelmanager(self):
