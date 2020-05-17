@@ -11,6 +11,7 @@ from threading import Timer
 import json
 import os
 import subprocess
+import numbers
 
 import gi
 gi.require_version('Gtk', '3.0')
@@ -217,19 +218,19 @@ class Screenkey(Gtk.Window):
     def update_geometry(self, configure=False):
         geometry = self.get_screen().get_monitor_geometry(self.monitor)
         if self.options.geometry is not None:
-
-            g = self.options.geometry
-            x = g[0]
-            y = g[1]
-            w = g[2]
-            h = g[3]
-            if len(g) == 6:
-                inverse_offset_x = g[4]
-                inverse_offset_y = g[5]
-                if inverse_offset_x:
-                    x = geometry.width - x - w
-                if inverse_offset_y:
-                    y = geometry.height - y - h
+            x, y, w, h = self.options.geometry
+            if not isinstance(x, numbers.Integral):
+                x = int(x * geometry.width)
+            if not isinstance(y, numbers.Integral):
+                y = int(y * geometry.height)
+            if not isinstance(w, numbers.Integral):
+                w = int(w * geometry.width)
+            if not isinstance(h, numbers.Integral):
+                h = int(h * geometry.height)
+            if x < 0:
+                x = geometry.width + x - w
+            if y < 0:
+                y = geometry.height + y - h
             area_geometry = [x, y, w, h]
         else:
             area_geometry = [geometry.x, geometry.y, geometry.width, geometry.height]

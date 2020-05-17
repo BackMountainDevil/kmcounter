@@ -12,21 +12,28 @@ import re
 from argparse import ArgumentParser
 
 
+def parse_geom_fract(buf):
+    if len(buf) == 0:
+        return 0
+    if buf[-1] == '%':
+        v = int(buf[:-1])
+        if v == 0:
+            return 0
+        return v / 100
+    return int(buf)
+
+
 def geometry(string):
-    size = re.match(r'^(\d+)x(\d+)((\+|-)\d+(\+|-)\d+)?$', string)
+    size = re.match(r'^(\d+%?)x(\d+%?)(?:([+-]\d+%?)([+-]\d+%?))?$', string)
     if size is None:
         raise TypeError
-    wh = [int(size.group(1)), int(size.group(2))]
-    if size.group(3) is None:
-        xy = [0, 0]
-        offset = [False, False]
-    else:
-        pos = re.match(r'^(\+|-)(\d+)(\+|-)(\d+)$', size.group(3))
-        x = int(pos.group(2))
-        y = int(pos.group(4))
-        xy = [x, y]
-        offset = [pos.group(1) == '-', pos.group(3) == '-']
-    return xy + wh + offset
+    w = parse_geom_fract(size.group(1))
+    h = parse_geom_fract(size.group(2))
+    if w == 0 or h == 0:
+        raise TypeError
+    x = parse_geom_fract(size.group(3)) if size.group(3) else 0
+    y = parse_geom_fract(size.group(4)) if size.group(4) else 0
+    return [x, y, w, h]
 
 
 def main():
