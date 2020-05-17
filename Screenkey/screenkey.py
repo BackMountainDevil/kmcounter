@@ -26,7 +26,7 @@ import cairo
 START = Gtk.Align.START
 CENTER = Gtk.Align.CENTER
 END = Gtk.Align.END
-FILL =Gtk.Align.FILL
+FILL = Gtk.Align.FILL
 TOP = Gtk.PositionType.TOP
 BOTTOM = Gtk.PositionType.BOTTOM
 RIGHT = Gtk.PositionType.RIGHT
