@@ -205,12 +205,8 @@ class Screenkey(Gtk.Window):
         window_x, window_y = self.get_position()
         window_width, window_height = self.get_size()
 
-        # TODO: set event mask
-        # mask = Gdk.Pixmap(None, window_width, window_height, 1)
-        # gc = Gdk.GC(mask)
-        # gc.set_foreground(Gdk.Color(pixel=0))
-        # mask.draw_rectangle(gc, True, 0, 0, window_width, window_height)
-        # self.input_shape_combine_mask(mask, 0, 0)
+        # set event mask for click-through
+        self.input_shape_combine_region(cairo.Region(cairo.RectangleInt(0, 0, 0, 0)))
 
         # set some proportional inner padding
         self.label.set_padding(window_width // 100, 0)
