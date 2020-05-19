@@ -288,7 +288,7 @@ class Screenkey(Gtk.Window):
             self.on_labelmngr_error()
             return
 
-        _, attr, text, _ = Pango.parse_markup(markup, -1, ' ')
+        _, attr, text, _ = Pango.parse_markup(markup, -1, '\0')
         self.label.set_text(text)
         self.label.set_attributes(attr)
         self.update_font()
