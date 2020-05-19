@@ -519,10 +519,10 @@ class Screenkey(Gtk.Window):
         lbl_time2 = Gtk.Label(_("seconds"))
         sb_time = Gtk.SpinButton(digits=1,
                                  numeric=True,
-                                 update_policy=IF_VALID,
-                                 value=self.options.timeout)
+                                 update_policy=IF_VALID)
         sb_time.set_increments(0.5, 1.0)
         sb_time.set_range(0, 300)
+        sb_time.set_value(self.options.timeout)
         sb_time.connect("value-changed", on_sb_time_changed)
         hbox_time.add(lbl_time1)
         hbox_time.add(sb_time)
