@@ -788,16 +788,17 @@ class Screenkey(Gtk.Window):
 
 
     def make_about_dialog(self):
-        self.about = about = Gtk.AboutDialog(use_header_bar=True)
+        self.about = about = Gtk.AboutDialog()
         about.set_program_name(APP_NAME)
         about.set_version(VERSION)
         about.set_copyright("""
         Copyright(c) 2010-2012: Pablo Seminario <pabluk@gmail.com>
-        Copyright(c) 2015-2016: wave++ "Yuri D'Elia" <wavexx@thregr.org>
+        Copyright(c) 2015-2020: wave++ "Yuri D'Elia" <wavexx@thregr.org>
+        Copyright(c) 2019-2020: Yuto Tokunaga <yuntan.sub1@gmail.com>
         """)
         about.set_comments(APP_DESC)
         about.set_documenters(
-                ["José María Quiroga <pepelandia@gmail.com>"]
+            ["José María Quiroga <pepelandia@gmail.com>"]
         )
         about.set_website(APP_URL)
         about.set_icon_name('preferences-desktop-keyboard-shortcuts')
