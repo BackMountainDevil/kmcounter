@@ -89,7 +89,6 @@ class Screenkey(Gtk.Window):
         self.set_app_paintable(True)
 
         self.label = Gtk.Label()
-        self.label.set_attributes(Pango.AttrList())
         self.label.set_ellipsize(Pango.EllipsizeMode.START)
         self.label.set_justify(Gtk.Justification.CENTER)
         self.label.show()
