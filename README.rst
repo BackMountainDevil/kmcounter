@@ -217,6 +217,19 @@ selection::
 
   ./screenkey -p fixed -g $(slop -n -f '%g')
 
+X and Y coordinates can be negative and in such cases they refer to a
+distance from opposite side of the screen (+10 would be 10 pixels from
+the left side of the screen, while -10 being 10 pixels from the right).
+
+As an extension to the geometry format, all numbers can be written with
+a trailing % to refer as a percentage to the selected screen size. For
+example, the following::
+
+  ./screenkey -p fixed -g 90%x10%+5%-10%
+
+specifies an horizontally centered rectangle filling 90% of the width of
+screen at 10% from the bottom.
+
 
 Choosing a good font
 ~~~~~~~~~~~~~~~~~~~~
