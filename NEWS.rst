@@ -1,4 +1,4 @@
-SCREENKEY 1.0
+screenkey 1.0
 -------------
 
 - Switch to Python 3 and GTK 3, thanks to Yuto Tokunaga.
@@ -14,7 +14,7 @@ SCREENKEY 1.0
 - Improved geometry handling by Alberto Fanjul.
 
 
-SCREENKEY 0.9
+screenkey 0.9
 -------------
 
 - Ctrl+Ctrl detection now works correctly in more scenarios.
