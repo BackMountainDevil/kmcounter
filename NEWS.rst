@@ -1,7 +1,17 @@
-SCREENKEY 0.10
---------------
+SCREENKEY 1.0
+-------------
 
 - Switch to Python 3 and GTK 3, thanks to Yuto Tokunaga.
+- "ISO_Left_Tab" is now also shown as Tab.
+- Shift+Shift or Alt+Alt can now be used to toggle screenkey as an
+  alternative to Ctrl+Ctrl.
+- More multimedia keys are supported (volume, brightness, playback).
+- Transparency of the window is now independent from the text (thanks to
+  Ziad EL KHOURY HANNA)
+- Screenkey no longer detaches by default from the terminal.
+- New "Windows" and "Linux" modifier modes.
+- French Translation improvements by Georges Khaznadar.
+- Improved geometry handling by Alberto Fanjul.
 
 
 SCREENKEY 0.9

@@ -11,7 +11,7 @@ gettext.install('screenkey')
 APP_NAME = "Screenkey"
 APP_DESC = _("Screencast your keys")
 APP_URL = 'https://www.thregr.org/~wavexx/software/screenkey/'
-VERSION = '0.10'
+VERSION = '1.0'
 
 SLOP_URL = 'https://github.com/naelstrof/slop'
 ERROR_URL = 'https://www.thregr.org/~wavexx/software/screenkey/#troubleshooting'

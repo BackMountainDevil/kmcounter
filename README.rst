@@ -35,14 +35,14 @@ To install::
 Dependencies:
 
 - Python 3.x (Python 2.x is no longer supported)
-- PyGObject
+- PyGObject (python3-gi)
 - GTK 3 (via GI bindings)
 - Pycairo (python3-cairo)
 - setuptools (build only)
 - DistUtils-Extra (build only)
 - slop (https://github.com/naelstrof/slop)
 - FontAwesome_ (for multimedia symbols)
-- GIR AppIndicator (required for Unity / GNOME Shell)
+- GIR AppIndicator (only required for Unity / GNOME Shell)
 
 Install dependencies (on Debian/Ubuntu)::
 
@@ -411,10 +411,10 @@ You can exit from Screenkey by right-clicking on it's status icon and
 selecting "Quit".
 
 If you're using GNOME/Unity and cannot see any status icon please make
-sure the ``python-appindicator`` package is installed. Run the following
-inside a terminal to install as required::
+sure the ``gir1.2-appindicator3-0.1`` package is installed. Run the
+following inside a terminal to install as required::
 
-  sudo apt-get install python-appindicator
+  sudo apt-get install gir1.2-appindicator3-0.1
 
 On any other desktop system Screenkey uses the regular system tray. If
 you don't have a systray or you cannot quit an existing Screenkey, use
@@ -443,7 +443,7 @@ Authors and Copyright
 
 | "screenkey" is distributed under GNU GPLv3+, WITHOUT ANY WARRANTY.
 | Copyright(c) 2010-2012: Pablo Seminario <pabluk@gmail.com>
-| Copyright(c) 2015-2016: wave++ "Yuri D'Elia" <wavexx@thregr.org>
+| Copyright(c) 2015-2020: wave++ "Yuri D'Elia" <wavexx@thregr.org>
 | Copyright(c) 2019-2020: Yuto Tokunaga <yuntan.sub1@gmail.com>
 
 screenkey's GIT repository is publicly accessible at:
@@ -454,6 +454,7 @@ https://gitlab.com/screenkey/screenkey
 Additional Thanks
 -----------------
 
+* @logix (gitlab)
 * @rhoit (github)
 * Alberto Fanjul
 * Benjamin Chrétien
@@ -464,7 +465,9 @@ Additional Thanks
 * Igor Bronovskyi
 * Ivan Makfinsky
 * Jacob Gardner
+* Matthew White
 * Muneeb Shaikh
+* Olivier Boesch
 * Stanislav Seletskiy
 * Zhum (launchpad)
 * Ziad El Khoury Hanna
