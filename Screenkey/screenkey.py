@@ -593,8 +593,9 @@ class Screenkey(Gtk.Window):
                              hexpand=True, halign=START)
         btn_font = Gtk.FontButton(self.options.font_desc,
                                   font=self.options.font_desc,
-                                  level=Gtk.FontChooserLevel.STYLE,
                                   use_font=True, show_size=False)
+        if Gtk.check_version(3, 23, 0) is None:
+            btn_font.set_level(Gtk.FontChooserLevel.STYLE)
         btn_font.connect("font-set", on_btn_font)
 
         lbl_sizes = Gtk.Label(_("Size"),
