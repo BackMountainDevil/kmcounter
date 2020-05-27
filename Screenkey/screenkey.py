@@ -37,6 +37,14 @@ VERTICAL = Gtk.Orientation.VERTICAL
 IF_VALID = Gtk.SpinButtonUpdatePolicy.IF_VALID
 
 
+def gi_module_available(module, version):
+    try:
+        gi.require_version(module, version)
+        return True
+    except ValueError:
+        return False
+
+
 class Screenkey(Gtk.Window):
     STATE_FILE = os.path.join(GLib.get_user_config_dir(), 'screenkey.json')
 
@@ -120,7 +128,10 @@ class Screenkey(Gtk.Window):
         self.make_preferences_dialog()
 
         if not self.options.no_systray:
-            self.make_systray()
+            if gi_module_available('AppIndicator3', '0.1'):
+                self.make_appindicator()
+            else:
+                self.make_systray()
 
         self.connect("delete-event", self.quit)
         if show_settings:
@@ -770,22 +781,21 @@ class Screenkey(Gtk.Window):
         menu.show()
 
 
+    def make_appindicator(self):
+        from gi.repository import AppIndicator3 as AppIndicator
+        self.systray = AppIndicator.Indicator.new(
+            APP_NAME, 'indicator-messages', AppIndicator.IndicatorCategory.APPLICATION_STATUS)
+        self.systray.set_status(AppIndicator.IndicatorStatus.ACTIVE)
+        self.systray.set_attention_icon("indicator-messages-new")
+        self.systray.set_icon("preferences-desktop-keyboard-shortcuts")
+        self.systray.set_menu(self.menu)
+        self.logger.debug("Using AppIndicator.")
+
     def make_systray(self):
-        try:
-            from gi.repository import AppIndicator3 as AppIndicator
-            gi.require_version('AppIndicator3', '0.1')
-            self.systray = AppIndicator.Indicator.new(
-                APP_NAME, 'indicator-messages', AppIndicator.IndicatorCategory.APPLICATION_STATUS)
-            self.systray.set_status(AppIndicator.IndicatorStatus.ACTIVE)
-            self.systray.set_attention_icon("indicator-messages-new")
-            self.systray.set_icon("preferences-desktop-keyboard-shortcuts")
-            self.systray.set_menu(self.menu)
-            self.logger.debug("Using AppIndicator.")
-        except ImportError:
-            self.systray = Gtk.StatusIcon()
-            self.systray.set_from_icon_name("preferences-desktop-keyboard-shortcuts")
-            self.systray.connect("popup-menu", self.on_statusicon_popup, self.menu)
-            self.logger.debug("Using StatusIcon.")
+        self.systray = Gtk.StatusIcon()
+        self.systray.set_from_icon_name("preferences-desktop-keyboard-shortcuts")
+        self.systray.connect("popup-menu", self.on_statusicon_popup, self.menu)
+        self.logger.debug("Using StatusIcon.")
 
 
     def make_about_dialog(self):
