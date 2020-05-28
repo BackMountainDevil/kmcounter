@@ -1,3 +1,10 @@
+screenkey 1.1
+-------------
+
+- Fix PyGI warning during startup when using AppIndicator.
+- Fix running with GTK versions older than 3.23.
+
+
 screenkey 1.0
 -------------
 
