@@ -48,7 +48,11 @@ Install dependencies (on Debian/Ubuntu)::
 
   sudo apt-get install python3-gi gir1.2-gtk-3.0 python3-cairo
   sudo apt-get install python3-setuptools python3-distutils-extra
-  sudo apt-get install fonts-font-awesome gir1.2-appindicator3-0.1
+  sudo apt-get install fonts-font-awesome slop
+
+When using GNOME also install::
+
+  sudo apt-get install gir1.2-appindicator3-0.1
 
 You can also install "screenkey" via ArchLinux's AUR package:
 
