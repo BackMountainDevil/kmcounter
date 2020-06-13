@@ -24,6 +24,19 @@ This is an almost-complete rewrite of screenkey_ 0.2, featuring:
 Installation and basic usage
 ----------------------------
 
+Official packages
+~~~~~~~~~~~~~~~~~
+
+Arch: `Arch community package <https://www.archlinux.org/packages/community/any/screenkey/>`_
+  ``sudo pacman -Sy screenkey``
+
+Debian / Ubuntu: `Debian tracker <https://packages.debian.org/search?searchon=sourcenames&keywords=screenkey>`_
+  ``sudo apt-get install screenkey``
+
+
+From source
+~~~~~~~~~~~
+
 Execute without installation::
 
   ./screenkey
@@ -53,10 +66,6 @@ Install dependencies (on Debian/Ubuntu)::
 When using GNOME also install::
 
   sudo apt-get install gir1.2-appindicator3-0.1
-
-You can also install "screenkey" via ArchLinux's AUR package:
-
-https://aur.archlinux.org/packages/screenkey
 
 Note: Screenkey makes use of low-level X11 functions directly via
 ``libX11.so.6``.
