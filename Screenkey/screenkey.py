@@ -51,10 +51,12 @@ class Screenkey(Gtk.Window):
     def __init__(self, logger, options, show_settings=False):
         Gtk.Window.__init__(self, Gtk.WindowType.POPUP)
 
+        self.logger = logger
+        self.logger.debug("{} {}".format(APP_NAME, VERSION))
+
         self.exit_status = None
         self.timer_hide = None
         self.timer_min = None
-        self.logger = logger
 
         defaults = Options({'no_systray': False,
                             'timeout': 2.5,
