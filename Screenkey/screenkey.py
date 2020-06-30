@@ -7,7 +7,6 @@
 from . import *
 from .labelmanager import LabelManager
 
-from threading import Timer
 import json
 import os
 import subprocess
@@ -20,7 +19,7 @@ gi.require_version('Pango', '1.0')
 from gi.repository import GLib
 GLib.threads_init()
 
-from gi.repository import Gtk, Gdk, Pango
+from gi.repository import Gtk, Gdk, Pango, GObject
 import cairo
 
 
@@ -308,27 +307,29 @@ class Screenkey(Gtk.Window):
 
         if not self.get_property('visible'):
             self.show()
-        if self.timer_hide:
-            self.timer_hide.cancel()
+        if self.timer_hide is not None:
+            GObject.source_remove(self.timer_hide)
         if self.options.timeout > 0:
-            self.timer_hide = Timer(self.options.timeout, self.on_timeout_main)
-            self.timer_hide.start()
-        if self.timer_min:
-            self.timer_min.cancel()
+            self.timer_hide = GObject.timeout_add(self.options.timeout * 1000, self.on_timeout_main)
+        if self.timer_min is not None:
+            GObject.source_remove(self.timer_min)
         if not synthetic:
-            self.timer_min = Timer(self.options.recent_thr * 2, self.on_timeout_min)
-            self.timer_min.start()
+            self.timer_min = GObject.timeout_add(self.options.recent_thr * 2000, self.on_timeout_min)
 
 
     def on_timeout_main(self):
         if not self.options.persist:
             self.hide()
+        self.timer_hide = None
         self.label.set_text('')
         self.labelmngr.clear()
+        return False
 
 
     def on_timeout_min(self):
+        self.timer_min = None
         self.labelmngr.queue_update()
+        return False
 
 
     def restart_labelmanager(self):
