@@ -321,6 +321,11 @@ class LabelManager(object):
             self.logger.debug("inputlistener failure: {}".format(str(self.kl.error)))
             self.label_listener(None, None)
             return
+        if event.symbol is None:
+            # TODO: Investigate what causes this to happen.
+            # I caught it once in pdb, but in this function, not in inputlistener,
+            # and KeyData doesn't contain enough info.
+            return
         symbol = event.symbol.decode()
 
         if self.enabled:
