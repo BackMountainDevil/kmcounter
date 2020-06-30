@@ -139,7 +139,7 @@ class Screenkey(Gtk.Window):
         self.set_app_paintable(True)
 
         self.button_pixbufs = []
-        self.button_states = [None] * 8
+        self.button_states = [None] * 11
         self.img = Gtk.Image()
         self.update_image_tag = None
 
@@ -442,11 +442,22 @@ class Screenkey(Gtk.Window):
 
 
     def on_image_change(self, button_state):
-        self.button_states[button_state.btn] = button_state
-        if self.options.mouse:
-            if not self.update_image_tag:
-                self.update_image_tag = GLib.idle_add(self.update_image)
-            self.timed_show()
+        if button_state:
+            btn = button_state.btn
+            # Don't do animation after stealth enable
+            if self.button_states[btn] is not None or button_state.pressed:
+                self.button_states[btn] = button_state
+                if self.options.mouse:
+                    if not self.update_image_tag:
+                        self.update_image_tag = GLib.idle_add(self.update_image)
+                    self.timed_show()
+        else:
+            # Reset all
+            self.button_states = [None for _ in self.button_states]
+            if self.options.mouse:
+                if not self.update_image_tag:
+                    self.update_image_tag = GLib.idle_add(self.update_image)
+                self.timed_show()
 
 
     def on_timeout_main(self):

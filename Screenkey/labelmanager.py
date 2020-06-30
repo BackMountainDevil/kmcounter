@@ -322,6 +322,14 @@ class LabelManager(object):
             self.label_listener(None, None)
             return
         symbol = event.symbol.decode()
+
+        if self.enabled:
+            for mod, button_id in zip(['ctrl', 'alt', 'shift'], range(8, 11)):
+                if symbol in MODS_SYMS[mod]:
+                    self.image_listener(ButtonData(
+                        datetime.now(), button_id, event.pressed
+                    ))
+
         if event.pressed == False:
             self.logger.debug("Key released {:5}(ks): {}".format(event.keysym, symbol))
             return
@@ -342,6 +350,8 @@ class LabelManager(object):
                and symbol in MODS_SYMS[mod]:
                 self.enabled = not self.enabled
                 state = 'enabled' if self.enabled else 'disabled'
+                if not self.enabled:
+                    self.image_listener(None)
                 self.logger.info("{mod}+{mod} detected: screenkey {state}".format(
                     mod=mod.capitalize(), state=state))
         if not self.enabled:
