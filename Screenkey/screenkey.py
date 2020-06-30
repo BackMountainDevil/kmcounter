@@ -171,7 +171,7 @@ class Screenkey(Gtk.Window):
             self.set_visual(visual)
 
         self.box.pack_start(self.img, expand=False, fill=True, padding=0)
-        self.box.pack_end(self.label, expand=False, fill=True, padding=0)
+        self.box.pack_end(self.label, expand=True, fill=True, padding=0)
 
         self.labelmngr = None
         self.enabled = True
@@ -328,6 +328,7 @@ class Screenkey(Gtk.Window):
                            self.options.opacity)
         cr.set_operator(cairo.OPERATOR_SOURCE)
         cr.paint()
+        cr.set_operator(cairo.OPERATOR_OVER)
         return False
 
 
