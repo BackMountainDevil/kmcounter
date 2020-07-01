@@ -28,7 +28,7 @@ Official packages
 ~~~~~~~~~~~~~~~~~
 
 Arch: `Arch community package <https://www.archlinux.org/packages/community/any/screenkey/>`_
-  ``sudo pacman -Sy screenkey``
+  ``sudo pacman -S screenkey``
 
 Debian / Ubuntu: `Debian tracker <https://packages.debian.org/search?searchon=sourcenames&keywords=screenkey>`_
   ``sudo apt-get install screenkey``
