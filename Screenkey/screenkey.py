@@ -43,7 +43,11 @@ def load_button_pixbufs(color):
     global BUTTONS_SVG
 
     if BUTTONS_SVG is None:
-        with open('images/mouse.svg', 'r') as svg_file:
+        module_path = os.path.dirname(__file__)
+        images_path = os.path.join(module_path, '../images')
+        if not os.path.exists(os.path.join(module_path, 'data/not_installed_on_system')):
+            images_path = '/usr/share/images/screenkey'
+        with open(os.path.join(images_path, 'mouse.svg'), 'r') as svg_file:
             BUTTONS_SVG = svg_file.readlines()
 
     if not isinstance(color, str):
