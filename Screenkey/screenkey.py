@@ -77,7 +77,8 @@ class Screenkey(Gtk.Window):
                             'vis_shift': False,
                             'vis_space': True,
                             'geometry': None,
-                            'screen': 0})
+                            'screen': 0,
+                            'start_disabled': False})
         self.options = self.load_state()
         if self.options is None:
             self.options = defaults
@@ -347,7 +348,8 @@ class Screenkey(Gtk.Window):
                                       recent_thr=self.options.recent_thr,
                                       compr_cnt=self.options.compr_cnt,
                                       ignore=self.options.ignore,
-                                      pango_ctx=self.label.get_pango_context())
+                                      pango_ctx=self.label.get_pango_context(),
+                                      enabled=not self.options.start_disabled)
         self.labelmngr.start()
 
 
