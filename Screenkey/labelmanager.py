@@ -166,14 +166,15 @@ def keysym_to_mod(keysym):
 
 class LabelManager(object):
     def __init__(self, listener, logger, key_mode, bak_mode, mods_mode, mods_only,
-                 multiline, vis_shift, vis_space, recent_thr, compr_cnt, ignore, pango_ctx):
+                 multiline, vis_shift, vis_space, recent_thr, compr_cnt, ignore,
+                 pango_ctx, enabled):
         self.key_mode = key_mode
         self.bak_mode = bak_mode
         self.mods_mode = mods_mode
         self.logger = logger
         self.listener = listener
         self.data = []
-        self.enabled = True
+        self.enabled = enabled
         self.mods_only = mods_only
         self.multiline = multiline
         self.vis_shift = vis_shift
