@@ -293,23 +293,14 @@ configuration.
 Related tools
 ~~~~~~~~~~~~~
 
-If you're recording a screencast where almost all editing is already
-visible (for example, in ``vi`` or most other text editors), consider
-using a bigger screen font instead, so that the viewer can read the text
-directly while the program is being used.
-
-If the control sequences you're typing are rare, you might even want to
-spell what you're doing instead of obscuring the screen with the typing
-output.
-
 When doing screencasts involving a lot of mouse activity, or which
 require holding down modifiers to perform other mouse actions, key-mon_
-might be a good companion to screenkey, or replace it entirely.
+(Python-based) or the newer kmcaster_ (Java-based) might be a good
+companion to screenkey, or replace it entirely.
 
-key-mon can be configured to show the state of key modifiers
-continuously and circle the location of mouse clicks ("visible click").
-key-mon and screenkey complete each-other and can be used at the same
-time.
+Both can be configured to show the state of key modifiers continuously
+and circle the location of mouse clicks ("visible click") and can be
+used together with screenkey.
 
 
 Troubleshooting
@@ -488,5 +479,6 @@ Additional Thanks
 
 .. _Screenflick: http://www.araelium.com/screenflick/
 .. _key-mon: https://code.google.com/p/key-mon/
+.. _kmcaster: https://github.com/DaveJarvis/kmcaster/
 .. _screenkey: https://launchpad.net/screenkey
 .. _slop: https://github.com/naelstrof/slop
