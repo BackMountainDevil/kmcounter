@@ -682,10 +682,10 @@ class Screenkey(Gtk.Window):
         chk_compr.connect("toggled", on_cbox_compr_changed)
         self.sb_compr = Gtk.SpinButton(digits=0,
                                        numeric=True,
-                                       update_policy=IF_VALID,
-                                       value=self.options.compr_cnt or 3)
+                                       update_policy=IF_VALID)
         self.sb_compr.set_increments(1, 1)
         self.sb_compr.set_range(1, 100)
+        self.sb_compr.set_value(self.options.compr_cnt or 3)
         self.sb_compr.connect("value-changed", on_sb_compr_changed)
         hbox_compr.add(chk_compr)
         hbox_compr.add(self.sb_compr)
