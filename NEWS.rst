@@ -1,3 +1,16 @@
+screenkey 1.2
+-------------
+
+- Now supports FontAwesome 5 in addition to FontAwesome 4.
+- New multimedia keys for: bluetooth, tools, favorites.
+- New Catalan translation thanks to Eduard Ereza Martínez.
+- Updated Simplified Chinese translation by @WhiredPlanck.
+- New flag ``--start-disabled`` by Laurence Tratt to start
+  screenkey in disabled state.
+- Fix crash due to a race condition thanks to Roope Salmi.
+- Fix incorrect value for "Compress repeats" in settings.
+
+
 screenkey 1.1
 -------------
 
