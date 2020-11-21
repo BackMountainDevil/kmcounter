@@ -83,6 +83,8 @@ def main():
                     help=_("Compress key repeats after the specified count"))
     ap.add_argument("--start-disabled", action='store_true', default=None,
                     help=_("do not display anything until explicitly requested"))
+    ap.add_argument('--version', action='version', version=VERSION,
+                    help=_("show version of screenkey"))
     args = ap.parse_args()
 
     # Set options
