@@ -34,5 +34,6 @@ setup(name='screenkey', version='1.2',
       install_requires=['PyGObject', 'pycairo'],
       data_files=[('share/applications', ['data/screenkey.desktop']),
                   ('share/doc/screenkey', ['README.rst', 'NEWS.rst']),
-                  ('share/metainfo', ['data/org.thregr.screenkey.metainfo.xml'])],
+                  ('share/metainfo', ['data/org.thregr.screenkey.metainfo.xml']),
+                  ('share/images/screenkey', ['images/mouse.svg'])],
 )
