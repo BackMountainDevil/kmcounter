@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # "screenkey" is distributed under GNU GPLv3+, WITHOUT ANY WARRANTY.
 # Copyright(c) 2010-2012: Pablo Seminario <pabluk@gmail.com>
 # Copyright(c) 2015-2020: wave++ "Yuri D'Elia" <wavexx@thregr.org>
@@ -47,7 +46,7 @@ def load_button_pixbufs(color):
         images_path = os.path.join(module_path, '../images')
         if not os.path.exists(os.path.join(module_path, 'data/not_installed_on_system')):
             images_path = '/usr/share/images/screenkey'
-        with open(os.path.join(images_path, 'mouse.svg'), 'r') as svg_file:
+        with open(os.path.join(images_path, 'mouse.svg')) as svg_file:
             BUTTONS_SVG = svg_file.readlines()
 
     if not isinstance(color, str):
@@ -204,10 +203,10 @@ class Screenkey(Gtk.Window):
         """Load stored options"""
         options = None
         try:
-            with open(self.STATE_FILE, 'r') as f:
+            with open(self.STATE_FILE) as f:
                 options = Options(json.load(f))
                 self.logger.debug("Options loaded.")
-        except IOError:
+        except OSError:
             self.logger.debug("file %s does not exists." % self.STATE_FILE)
         except ValueError:
             self.logger.debug("file %s is invalid." % self.STATE_FILE)
@@ -225,7 +224,7 @@ class Screenkey(Gtk.Window):
             with open(self.STATE_FILE, 'w') as f:
                 json.dump(options._store, f)
                 self.logger.debug("Options saved.")
-        except IOError:
+        except OSError:
             self.logger.debug("Cannot open %s." % self.STATE_FILE)
 
 
@@ -397,7 +396,7 @@ class Screenkey(Gtk.Window):
 
 
     def show(self):
-        super(Screenkey, self).show()
+        super().show()
 
 
     def on_labelmngr_error(self):

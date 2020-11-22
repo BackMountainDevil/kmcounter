@@ -1,8 +1,6 @@
-# -*- coding: utf-8 -*-
 # Distributed under the GNU GPLv3+ license, WITHOUT ANY WARRANTY.
 # Copyright(c) 2015: wave++ "Yuri D'Elia" <wavexx@thregr.org>
 
-from __future__ import unicode_literals
 from ctypes import *
 
 ## base X11
