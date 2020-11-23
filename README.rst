@@ -34,6 +34,8 @@ Arch: `Arch community package <https://www.archlinux.org/packages/community/any/
 Debian / Ubuntu: `Debian tracker <https://packages.debian.org/search?searchon=sourcenames&keywords=screenkey>`_
   ``sudo apt-get install screenkey``
 
+Fedora / EPEL: `Fedora package <https://src.fedoraproject.org/rpms/screenkey>`_
+  ``sudo dnf install screenkey``
 
 From source
 ~~~~~~~~~~~
