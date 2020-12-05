@@ -348,20 +348,28 @@ class Screenkey(Gtk.Window):
 
     def update_geometry(self, configure=False):
         geometry = self.get_screen().get_monitor_geometry(self.monitor)
+
         if self.options.geometry is not None:
+            # NOTE: this assume a single global scaling factor for all
+            # monitors which seems to be true for GTK3:
+            # https://wiki.gnome.org/HowDoI/HiDpi
+            scale = self.get_screen().get_monitor_scale_factor(self.monitor)
+
+            # scale the coordinate according to the selected monitor
+            # or convert from device to gdk pixel units
+            def coord_to_gdk(coord, extent):
+                if not isinstance(coord, numbers.Integral):
+                    return int(coord * extent)
+                else:
+                    return int(coord / scale)
+
             x, y, w, h = self.options.geometry
-            if not isinstance(x, numbers.Integral):
-                x = int(x * geometry.width)
-            if not isinstance(y, numbers.Integral):
-                y = int(y * geometry.height)
-            if not isinstance(w, numbers.Integral):
-                w = int(w * geometry.width)
-            if not isinstance(h, numbers.Integral):
-                h = int(h * geometry.height)
-            if x < 0:
-                x = geometry.width + x - w
-            if y < 0:
-                y = geometry.height + y - h
+            x = coord_to_gdk(x, geometry.width)
+            y = coord_to_gdk(y, geometry.height)
+            w = coord_to_gdk(w, geometry.width)
+            h = coord_to_gdk(h, geometry.height)
+            if x < 0: x = geometry.width + x - w
+            if y < 0: y = geometry.height + y - h
             area_geometry = [x, y, w, h]
         else:
             area_geometry = [geometry.x, geometry.y, geometry.width, geometry.height]
