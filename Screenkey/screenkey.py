@@ -373,9 +373,7 @@ class Screenkey(Gtk.Window):
             area_geometry = [geometry.x, geometry.y, geometry.width, geometry.height]
 
         if self.options.position == 'fixed':
-            self.move(*area_geometry[0:2])
-            self.resize(*area_geometry[2:4])
-            self.update_font()
+            self.move_resize(*area_geometry)
             return
 
         if self.options.font_size == 'large':
@@ -384,7 +382,6 @@ class Screenkey(Gtk.Window):
             window_height = 12 * area_geometry[3] // 100
         else:
             window_height = 8 * area_geometry[3] // 100
-        self.resize(area_geometry[2], window_height)
 
         if self.options.position == 'top':
             window_y = area_geometry[1] + area_geometry[3] // 10
@@ -392,8 +389,16 @@ class Screenkey(Gtk.Window):
             window_y = area_geometry[1] + area_geometry[3] // 2 - window_height // 2
         else:
             window_y = area_geometry[1] + area_geometry[3] * 9 // 10 - window_height
-        self.move(area_geometry[0], window_y)
+
+        self.move_resize(area_geometry[0], window_y,
+                         area_geometry[2], window_height)
+
+
+    def move_resize(self, x, y, w, h):
+        self.move(x, y)
+        self.resize(w, h)
         self.update_font()
+        self.update_image()
 
 
     def on_statusicon_popup(self, widget, button, timestamp, data=None):
