@@ -334,9 +334,6 @@ class Screenkey(Gtk.Window):
 
 
     def on_configure(self, *_):
-        window_x, window_y = self.get_position()
-        window_width, window_height = self.get_size()
-
         # set event mask for click-through
         self.input_shape_combine_region(cairo.Region(cairo.RectangleInt(0, 0, 0, 0)))
 
