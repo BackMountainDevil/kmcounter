@@ -82,6 +82,16 @@ def gi_module_available(module, version):
         return False
 
 
+class FixedSizeLabel(Gtk.Label):
+    def __init__(self):
+        super().__init__()
+
+    def do_get_preferred_height(self):
+        # Inhibit Label's default size negotiation so that it scales
+        # according to window's geometry unconditionally
+        return 0
+
+
 class Screenkey(Gtk.Window):
     STATE_FILE = os.path.join(GLib.get_user_config_dir(), 'screenkey.json')
 
@@ -147,7 +157,7 @@ class Screenkey(Gtk.Window):
         self.box.show()
         self.add(self.box)
 
-        self.label = Gtk.Label()
+        self.label = FixedSizeLabel()
         self.label.set_ellipsize(Pango.EllipsizeMode.START)
         self.label.set_justify(Gtk.Justification.CENTER)
         self.label.show()
