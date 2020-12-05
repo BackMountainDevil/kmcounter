@@ -1,3 +1,13 @@
+screenkey 1.3
+-------------
+
+- Can displays mouse clicks and modifier keys, with big thanks to
+  Matthew White, Ziad El Khoury Hanna and Roope Salmi!
+- Updated Russian translation thanks to Olesya Gerasimenko
+- Includes Appstream metadata by Rajeesh K V
+- Add ``--version`` support by Anders Jackson
+
+
 screenkey 1.2
 -------------
 
