@@ -258,10 +258,11 @@ class Screenkey(Gtk.Window):
 
 
     def update_font(self):
-        _, window_height = self.get_size()
+        window_width, window_height = self.get_size()
         text = self.label.get_text()
         lines = text.count('\n') + 1
         self.font.set_absolute_size((50 * window_height // lines // 100) * 1000)
+        self.label.set_padding(window_width // 100, 0)
         self.label.get_pango_context().set_font_description(self.font)
 
 
@@ -338,9 +339,6 @@ class Screenkey(Gtk.Window):
 
         # set event mask for click-through
         self.input_shape_combine_region(cairo.Region(cairo.RectangleInt(0, 0, 0, 0)))
-
-        # set some proportional inner padding
-        self.label.set_padding(window_width // 100, 0)
 
         self.update_font()
         self.update_image()
