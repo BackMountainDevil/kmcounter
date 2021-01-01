@@ -54,8 +54,8 @@ Dependencies:
 - PyGObject (python3-gi)
 - GTK 3 (via GI bindings)
 - Pycairo (python3-cairo)
-- setuptools (build only)
-- DistUtils-Extra (build only)
+- setuptools (python3-setuptools, build only)
+- babel (python3-babel, build only)
 - slop (https://github.com/naelstrof/slop)
 - FontAwesome_ (for multimedia symbols)
 - GIR AppIndicator (only required for Unity / GNOME Shell)
@@ -63,7 +63,7 @@ Dependencies:
 Install dependencies (on Debian/Ubuntu)::
 
   sudo apt-get install python3-gi gir1.2-gtk-3.0 python3-cairo
-  sudo apt-get install python3-setuptools python3-distutils-extra
+  sudo apt-get install python3-setuptools python3-babel
   sudo apt-get install fonts-font-awesome slop
 
 When using GNOME also install::
