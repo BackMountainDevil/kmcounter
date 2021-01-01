@@ -80,16 +80,6 @@ def gi_module_available(module, version):
         return False
 
 
-class FixedSizeLabel(Gtk.Label):
-    def __init__(self):
-        super().__init__()
-
-    def do_get_preferred_height(self):
-        # Inhibit Label's default size negotiation so that it scales
-        # according to window's geometry unconditionally
-        return 0
-
-
 class Screenkey(Gtk.Window):
     STATE_FILE = os.path.join(GLib.get_user_config_dir(), 'screenkey.json')
 
@@ -155,7 +145,7 @@ class Screenkey(Gtk.Window):
         self.box.show()
         self.add(self.box)
 
-        self.label = FixedSizeLabel()
+        self.label = Gtk.Label()
         self.label.set_ellipsize(Pango.EllipsizeMode.START)
         self.label.set_justify(Gtk.Justification.CENTER)
         self.label.show()
@@ -170,7 +160,7 @@ class Screenkey(Gtk.Window):
         self.connect("draw", self.on_draw)
 
         scr = self.get_screen()
-        scr.connect("size-changed", self.on_configure)
+        scr.connect("size-changed", self.on_size_changed)
         scr.connect("monitors-changed", self.on_monitors_changed)
         self.set_active_monitor(self.options.screen)
 
@@ -265,12 +255,15 @@ class Screenkey(Gtk.Window):
                 self.update_image_tag = None
 
 
+    def do_get_preferred_height(self):
+        return self.height
+
+
     def update_font(self):
-        window_width, window_height = self.get_size()
         text = self.label.get_text()
         lines = text.count('\n') + 1
-        self.font.set_absolute_size((50 * window_height // lines // 100) * 1000)
-        self.label.set_padding(window_width // 100, 0)
+        self.font.set_absolute_size((50 * self.height // lines // 100) * 1000)
+        self.label.set_padding(self.width // 100, 0)
         self.label.get_pango_context().set_font_description(self.font)
 
 
@@ -308,11 +301,10 @@ class Screenkey(Gtk.Window):
                 GdkPixbuf.InterpType.NEAREST, alpha
             )
 
-        _, height = self.get_size()
-        scale = height / pixbuf.get_height()
+        scale = self.height / pixbuf.get_height()
         if scale != 1:
             width = int(pixbuf.get_width() * scale)
-            pixbuf = pixbuf.scale_simple(width, height, GdkPixbuf.InterpType.BILINEAR)
+            pixbuf = pixbuf.scale_simple(width, self.height, GdkPixbuf.InterpType.BILINEAR)
         self.img.set_from_pixbuf(pixbuf)
 
         if not copied:
@@ -345,6 +337,9 @@ class Screenkey(Gtk.Window):
         # set event mask for click-through
         self.input_shape_combine_region(cairo.Region(cairo.RectangleInt(0, 0, 0, 0)))
 
+
+    def on_size_changed(self):
+        self.width, self.height = self.get_size()
         self.update_font()
         self.update_image()
 
@@ -400,10 +395,10 @@ class Screenkey(Gtk.Window):
 
 
     def move_resize(self, x, y, w, h):
+        self.width = w
+        self.height = h
         self.move(x, y)
         self.resize(w, h)
-        self.update_font()
-        self.update_image()
 
 
     def on_statusicon_popup(self, widget, button, timestamp, data=None):
