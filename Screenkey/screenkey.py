@@ -431,6 +431,7 @@ class Screenkey(Gtk.Window):
             self.show()
         if self.timer_hide is not None:
             GObject.source_remove(self.timer_hide)
+            self.timer_hide = None
         if self.options.timeout > 0 and not any(b and b.pressed for b in self.button_states):
             self.timer_hide = GObject.timeout_add(self.options.timeout * 1000, self.on_timeout_main)
 
@@ -448,6 +449,7 @@ class Screenkey(Gtk.Window):
         self.timed_show()
         if self.timer_min is not None:
             GObject.source_remove(self.timer_min)
+            self.timer_min = None
         if not synthetic:
             self.timer_min = GObject.timeout_add(self.options.recent_thr * 2000, self.on_timeout_min)
 
