@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # "screenkey" is distributed under GNU GPLv3+, WITHOUT ANY WARRANTY.
 # Copyright(c) 2010-2012: Pablo Seminario <pabluk@gmail.com>
 # Copyright(c) 2015-2016: wave++ "Yuri D'Elia" <wavexx@thregr.org>
@@ -165,7 +164,7 @@ def keysym_to_mod(keysym):
     return None
 
 
-class LabelManager(object):
+class LabelManager:
     def __init__(self, label_listener, image_listener, logger, key_mode,
                  bak_mode, mods_mode, mods_only, multiline, vis_shift,
                  vis_space, recent_thr, compr_cnt, ignore, pango_ctx,

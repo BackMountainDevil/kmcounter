@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Distributed under the GNU GPLv3+ license, WITHOUT ANY WARRANTY.
 # Copyright(c) 2015: wave++ "Yuri D'Elia" <wavexx@thregr.org>
 #
@@ -172,7 +171,7 @@ class InputType:
 class InputListener(threading.Thread):
     def __init__(self, kbd_callback, btn_callback, input_types=InputType.all,
                  kbd_compose=True, kbd_translate=True):
-        super(InputListener, self).__init__()
+        super().__init__()
         self.kbd_callback = kbd_callback
         self.btn_callback = btn_callback
         self.input_types = input_types
@@ -252,7 +251,7 @@ class InputListener(threading.Thread):
         self.lock.acquire()
         self.stopped = False
         self.error = None
-        super(InputListener, self).start()
+        super().start()
 
 
     def stop(self):
