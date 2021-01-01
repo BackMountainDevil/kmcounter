@@ -30,10 +30,15 @@ setup(name='screenkey', version='1.3',
 
       scripts=['screenkey'],
       packages=['Screenkey'],
-      setup_requires=['setuptools', 'python-distutils-extra'],
+      setup_requires=['setuptools', 'babel'],
       install_requires=['PyGObject', 'pycairo'],
-      package_data={'': ['images/mouse.svg']},
-      data_files=[('share/applications', ['data/screenkey.desktop']),
-                  ('share/doc/screenkey', ['README.rst', 'NEWS.rst']),
-                  ('share/metainfo', ['data/org.thregr.screenkey.metainfo.xml'])],
+      package_data={'': [
+          'images/mouse.svg',
+          'locale/*/LC_MESSAGES/screenkey.mo'
+      ]},
+      data_files=[
+          ('share/applications', ['data/screenkey.desktop']),
+          ('share/doc/screenkey', ['README.rst', 'NEWS.rst']),
+          ('share/metainfo', ['data/org.thregr.screenkey.metainfo.xml'])
+      ],
 )

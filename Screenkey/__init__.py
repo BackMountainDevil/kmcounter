@@ -4,8 +4,9 @@ except ImportError:
     # for python<3.3
     from collections import MutableMapping
 
+import os.path
 import gettext
-gettext.install('screenkey')
+gettext.install('screenkey', os.path.join(os.path.dirname(__file__), 'locale'))
 
 # Screenkey version
 APP_NAME = "Screenkey"
