@@ -406,10 +406,6 @@ class Screenkey(Gtk.Window):
             data.popup_at_pointer(None)
 
 
-    def show(self):
-        super().show()
-
-
     def on_labelmngr_error(self):
         msg = Gtk.MessageDialog(parent=self,
                                 type=Gtk.MessageType.ERROR,
