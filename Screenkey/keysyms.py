@@ -720,13 +720,13 @@ KEYSYMS = {
 0x08ae:   ['\u23a0',   '.'],   # botrightparens
 0x08af:   ['\u23a8',   '.'],   # leftmiddlecurlybrace
 0x08b0:   ['\u23ac',   '.'],   # rightmiddlecurlybrace
-0x08b1:   [None     ,   'o'],   # topleftsummation
-0x08b2:   [None     ,   'o'],   # botleftsummation
-0x08b3:   [None     ,   'o'],   # topvertsummationconnector
-0x08b4:   [None     ,   'o'],   # botvertsummationconnector
-0x08b5:   [None     ,   'o'],   # toprightsummation
-0x08b6:   [None     ,   'o'],   # botrightsummation
-0x08b7:   [None     ,   'o'],   # rightmiddlesummation
+0x08b1:   [None    ,   'o'],   # topleftsummation
+0x08b2:   [None    ,   'o'],   # botleftsummation
+0x08b3:   [None    ,   'o'],   # topvertsummationconnector
+0x08b4:   [None    ,   'o'],   # botvertsummationconnector
+0x08b5:   [None    ,   'o'],   # toprightsummation
+0x08b6:   [None    ,   'o'],   # botrightsummation
+0x08b7:   [None    ,   'o'],   # rightmiddlesummation
 0x08bc:   ['\u2264',   '.'],   # lessthanequal
 0x08bd:   ['\u2260',   '.'],   # notequal
 0x08be:   ['\u2265',   '.'],   # greaterthanequal
@@ -753,7 +753,7 @@ KEYSYMS = {
 0x08fc:   ['\u2191',   '.'],   # uparrow
 0x08fd:   ['\u2192',   '.'],   # rightarrow
 0x08fe:   ['\u2193',   '.'],   # downarrow
-0x09df:   [None     ,   'o'],   # blank
+0x09df:   [None    ,   'o'],   # blank
 0x09e0:   ['\u25c6',   '.'],   # soliddiamond
 0x09e1:   ['\u2592',   '.'],   # checkerboard
 0x09e2:   ['\u2409',   '.'],   # ht
@@ -803,14 +803,14 @@ KEYSYMS = {
 0x0abc:   ['\u27e8',   'o'],   # leftanglebracket
 0x0abd:   ['\u002e',   'o'],   # decimalpoint
 0x0abe:   ['\u27e9',   'o'],   # rightanglebracket
-0x0abf:   [None     ,   'o'],   # marker
+0x0abf:   [None    ,   'o'],   # marker
 0x0ac3:   ['\u215b',   '.'],   # oneeighth
 0x0ac4:   ['\u215c',   '.'],   # threeeighths
 0x0ac5:   ['\u215d',   '.'],   # fiveeighths
 0x0ac6:   ['\u215e',   '.'],   # seveneighths
 0x0ac9:   ['\u2122',   '.'],   # trademark
 0x0aca:   ['\u2613',   'o'],   # signaturemark
-0x0acb:   [None     ,   'o'],   # trademarkincircle
+0x0acb:   [None    ,   'o'],   # trademarkincircle
 0x0acc:   ['\u25c1',   'o'],   # leftopentriangle
 0x0acd:   ['\u25b7',   'o'],   # rightopentriangle
 0x0ace:   ['\u25cb',   'o'],   # emopencircle
@@ -823,7 +823,7 @@ KEYSYMS = {
 0x0ad6:   ['\u2032',   '.'],   # minutes
 0x0ad7:   ['\u2033',   '.'],   # seconds
 0x0ad9:   ['\u271d',   '.'],   # latincross
-0x0ada:   [None     ,   'o'],   # hexagram
+0x0ada:   [None    ,   'o'],   # hexagram
 0x0adb:   ['\u25ac',   'o'],   # filledrectbullet
 0x0adc:   ['\u25c0',   'o'],   # filledlefttribullet
 0x0add:   ['\u25b6',   'o'],   # filledrighttribullet
@@ -859,7 +859,7 @@ KEYSYMS = {
 0x0afc:   ['\u2038',   '.'],   # caret
 0x0afd:   ['\u201a',   '.'],   # singlelowquotemark
 0x0afe:   ['\u201e',   '.'],   # doublelowquotemark
-0x0aff:   [None     ,   'o'],   # cursor
+0x0aff:   [None    ,   'o'],   # cursor
 0x0ba3:   ['\u003c',   'd'],   # leftcaret
 0x0ba6:   ['\u003e',   'd'],   # rightcaret
 0x0ba8:   ['\u2228',   'd'],   # downcaret
@@ -976,7 +976,7 @@ KEYSYMS = {
 0x0dd8:   ['\u0e38',   '.'],   # Thai_sarau
 0x0dd9:   ['\u0e39',   '.'],   # Thai_sarauu
 0x0dda:   ['\u0e3a',   '.'],   # Thai_phinthu
-0x0dde:   [None     ,   'o'],   # Thai_maihanakat_maitho
+0x0dde:   [None    ,   'o'],   # Thai_maihanakat_maitho
 0x0ddf:   ['\u0e3f',   '.'],   # Thai_baht
 0x0de0:   ['\u0e40',   '.'],   # Thai_sarae
 0x0de1:   ['\u0e41',   '.'],   # Thai_saraae
@@ -1109,72 +1109,72 @@ KEYSYMS = {
 0x20aa:   ['\u20aa',   'u'],   # NewSheqelSign
 0x20ab:   ['\u20ab',   'u'],   # DongSign
 0x20ac:   ['\u20ac',   '.'],   # EuroSign
-0xfd01:   [None     ,   'f'],   # 3270_Duplicate
-0xfd02:   [None     ,   'f'],   # 3270_FieldMark
-0xfd03:   [None     ,   'f'],   # 3270_Right2
-0xfd04:   [None     ,   'f'],   # 3270_Left2
-0xfd05:   [None     ,   'f'],   # 3270_BackTab
-0xfd06:   [None     ,   'f'],   # 3270_EraseEOF
-0xfd07:   [None     ,   'f'],   # 3270_EraseInput
-0xfd08:   [None     ,   'f'],   # 3270_Reset
-0xfd09:   [None     ,   'f'],   # 3270_Quit
-0xfd0a:   [None     ,   'f'],   # 3270_PA1
-0xfd0b:   [None     ,   'f'],   # 3270_PA2
-0xfd0c:   [None     ,   'f'],   # 3270_PA3
-0xfd0d:   [None     ,   'f'],   # 3270_Test
-0xfd0e:   [None     ,   'f'],   # 3270_Attn
-0xfd0f:   [None     ,   'f'],   # 3270_CursorBlink
-0xfd10:   [None     ,   'f'],   # 3270_AltCursor
-0xfd11:   [None     ,   'f'],   # 3270_KeyClick
-0xfd12:   [None     ,   'f'],   # 3270_Jump
-0xfd13:   [None     ,   'f'],   # 3270_Ident
-0xfd14:   [None     ,   'f'],   # 3270_Rule
-0xfd15:   [None     ,   'f'],   # 3270_Copy
-0xfd16:   [None     ,   'f'],   # 3270_Play
-0xfd17:   [None     ,   'f'],   # 3270_Setup
-0xfd18:   [None     ,   'f'],   # 3270_Record
-0xfd19:   [None     ,   'f'],   # 3270_ChangeScreen
-0xfd1a:   [None     ,   'f'],   # 3270_DeleteWord
-0xfd1b:   [None     ,   'f'],   # 3270_ExSelect
-0xfd1c:   [None     ,   'f'],   # 3270_CursorSelect
-0xfd1d:   [None     ,   'f'],   # 3270_PrintScreen
-0xfd1e:   [None     ,   'f'],   # 3270_Enter
-0xfe01:   [None     ,   'f'],   # ISO_Lock
-0xfe02:   [None     ,   'f'],   # ISO_Level2_Latch
-0xfe03:   [None     ,   'f'],   # ISO_Level3_Shift
-0xfe04:   [None     ,   'f'],   # ISO_Level3_Latch
-0xfe05:   [None     ,   'f'],   # ISO_Level3_Lock
-0xfe06:   [None     ,   'f'],   # ISO_Group_Latch
-0xfe07:   [None     ,   'f'],   # ISO_Group_Lock
-0xfe08:   [None     ,   'f'],   # ISO_Next_Group
-0xfe09:   [None     ,   'f'],   # ISO_Next_Group_Lock
-0xfe0a:   [None     ,   'f'],   # ISO_Prev_Group
-0xfe0b:   [None     ,   'f'],   # ISO_Prev_Group_Lock
-0xfe0c:   [None     ,   'f'],   # ISO_First_Group
-0xfe0d:   [None     ,   'f'],   # ISO_First_Group_Lock
-0xfe0e:   [None     ,   'f'],   # ISO_Last_Group
-0xfe0f:   [None     ,   'f'],   # ISO_Last_Group_Lock
-0xfe20:   [None     ,   'f'],   # ISO_Left_Tab
-0xfe21:   [None     ,   'f'],   # ISO_Move_Line_Up
-0xfe22:   [None     ,   'f'],   # ISO_Move_Line_Down
-0xfe23:   [None     ,   'f'],   # ISO_Partial_Line_Up
-0xfe24:   [None     ,   'f'],   # ISO_Partial_Line_Down
-0xfe25:   [None     ,   'f'],   # ISO_Partial_Space_Left
-0xfe26:   [None     ,   'f'],   # ISO_Partial_Space_Right
-0xfe27:   [None     ,   'f'],   # ISO_Set_Margin_Left
-0xfe28:   [None     ,   'f'],   # ISO_Set_Margin_Right
-0xfe29:   [None     ,   'f'],   # ISO_Release_Margin_Left
-0xfe2a:   [None     ,   'f'],   # ISO_Release_Margin_Right
-0xfe2b:   [None     ,   'f'],   # ISO_Release_Both_Margins
-0xfe2c:   [None     ,   'f'],   # ISO_Fast_Cursor_Left
-0xfe2d:   [None     ,   'f'],   # ISO_Fast_Cursor_Right
-0xfe2e:   [None     ,   'f'],   # ISO_Fast_Cursor_Up
-0xfe2f:   [None     ,   'f'],   # ISO_Fast_Cursor_Down
-0xfe30:   [None     ,   'f'],   # ISO_Continuous_Underline
-0xfe31:   [None     ,   'f'],   # ISO_Discontinuous_Underline
-0xfe32:   [None     ,   'f'],   # ISO_Emphasize
-0xfe33:   [None     ,   'f'],   # ISO_Center_Object
-0xfe34:   [None     ,   'f'],   # ISO_Enter
+0xfd01:   [None    ,   'f'],   # 3270_Duplicate
+0xfd02:   [None    ,   'f'],   # 3270_FieldMark
+0xfd03:   [None    ,   'f'],   # 3270_Right2
+0xfd04:   [None    ,   'f'],   # 3270_Left2
+0xfd05:   [None    ,   'f'],   # 3270_BackTab
+0xfd06:   [None    ,   'f'],   # 3270_EraseEOF
+0xfd07:   [None    ,   'f'],   # 3270_EraseInput
+0xfd08:   [None    ,   'f'],   # 3270_Reset
+0xfd09:   [None    ,   'f'],   # 3270_Quit
+0xfd0a:   [None    ,   'f'],   # 3270_PA1
+0xfd0b:   [None    ,   'f'],   # 3270_PA2
+0xfd0c:   [None    ,   'f'],   # 3270_PA3
+0xfd0d:   [None    ,   'f'],   # 3270_Test
+0xfd0e:   [None    ,   'f'],   # 3270_Attn
+0xfd0f:   [None    ,   'f'],   # 3270_CursorBlink
+0xfd10:   [None    ,   'f'],   # 3270_AltCursor
+0xfd11:   [None    ,   'f'],   # 3270_KeyClick
+0xfd12:   [None    ,   'f'],   # 3270_Jump
+0xfd13:   [None    ,   'f'],   # 3270_Ident
+0xfd14:   [None    ,   'f'],   # 3270_Rule
+0xfd15:   [None    ,   'f'],   # 3270_Copy
+0xfd16:   [None    ,   'f'],   # 3270_Play
+0xfd17:   [None    ,   'f'],   # 3270_Setup
+0xfd18:   [None    ,   'f'],   # 3270_Record
+0xfd19:   [None    ,   'f'],   # 3270_ChangeScreen
+0xfd1a:   [None    ,   'f'],   # 3270_DeleteWord
+0xfd1b:   [None    ,   'f'],   # 3270_ExSelect
+0xfd1c:   [None    ,   'f'],   # 3270_CursorSelect
+0xfd1d:   [None    ,   'f'],   # 3270_PrintScreen
+0xfd1e:   [None    ,   'f'],   # 3270_Enter
+0xfe01:   [None    ,   'f'],   # ISO_Lock
+0xfe02:   [None    ,   'f'],   # ISO_Level2_Latch
+0xfe03:   [None    ,   'f'],   # ISO_Level3_Shift
+0xfe04:   [None    ,   'f'],   # ISO_Level3_Latch
+0xfe05:   [None    ,   'f'],   # ISO_Level3_Lock
+0xfe06:   [None    ,   'f'],   # ISO_Group_Latch
+0xfe07:   [None    ,   'f'],   # ISO_Group_Lock
+0xfe08:   [None    ,   'f'],   # ISO_Next_Group
+0xfe09:   [None    ,   'f'],   # ISO_Next_Group_Lock
+0xfe0a:   [None    ,   'f'],   # ISO_Prev_Group
+0xfe0b:   [None    ,   'f'],   # ISO_Prev_Group_Lock
+0xfe0c:   [None    ,   'f'],   # ISO_First_Group
+0xfe0d:   [None    ,   'f'],   # ISO_First_Group_Lock
+0xfe0e:   [None    ,   'f'],   # ISO_Last_Group
+0xfe0f:   [None    ,   'f'],   # ISO_Last_Group_Lock
+0xfe20:   [None    ,   'f'],   # ISO_Left_Tab
+0xfe21:   [None    ,   'f'],   # ISO_Move_Line_Up
+0xfe22:   [None    ,   'f'],   # ISO_Move_Line_Down
+0xfe23:   [None    ,   'f'],   # ISO_Partial_Line_Up
+0xfe24:   [None    ,   'f'],   # ISO_Partial_Line_Down
+0xfe25:   [None    ,   'f'],   # ISO_Partial_Space_Left
+0xfe26:   [None    ,   'f'],   # ISO_Partial_Space_Right
+0xfe27:   [None    ,   'f'],   # ISO_Set_Margin_Left
+0xfe28:   [None    ,   'f'],   # ISO_Set_Margin_Right
+0xfe29:   [None    ,   'f'],   # ISO_Release_Margin_Left
+0xfe2a:   [None    ,   'f'],   # ISO_Release_Margin_Right
+0xfe2b:   [None    ,   'f'],   # ISO_Release_Both_Margins
+0xfe2c:   [None    ,   'f'],   # ISO_Fast_Cursor_Left
+0xfe2d:   [None    ,   'f'],   # ISO_Fast_Cursor_Right
+0xfe2e:   [None    ,   'f'],   # ISO_Fast_Cursor_Up
+0xfe2f:   [None    ,   'f'],   # ISO_Fast_Cursor_Down
+0xfe30:   [None    ,   'f'],   # ISO_Continuous_Underline
+0xfe31:   [None    ,   'f'],   # ISO_Discontinuous_Underline
+0xfe32:   [None    ,   'f'],   # ISO_Emphasize
+0xfe33:   [None    ,   'f'],   # ISO_Center_Object
+0xfe34:   [None    ,   'f'],   # ISO_Enter
 0xfe50:   ['\u0300',   'f'],   # dead_grave
 0xfe51:   ['\u0301',   'f'],   # dead_acute
 0xfe52:   ['\u0302',   'f'],   # dead_circumflex
@@ -1191,52 +1191,52 @@ KEYSYMS = {
 0xfe5d:   ['\u0345',   'f'],   # dead_iota
 0xfe5e:   ['\u3099',   'f'],   # dead_voiced_sound
 0xfe5f:   ['\u309a',   'f'],   # dead_semivoiced_sound
-0xfe70:   [None     ,   'f'],   # AccessX_Enable
-0xfe71:   [None     ,   'f'],   # AccessX_Feedback_Enable
-0xfe72:   [None     ,   'f'],   # RepeatKeys_Enable
-0xfe73:   [None     ,   'f'],   # SlowKeys_Enable
-0xfe74:   [None     ,   'f'],   # BounceKeys_Enable
-0xfe75:   [None     ,   'f'],   # StickyKeys_Enable
-0xfe76:   [None     ,   'f'],   # MouseKeys_Enable
-0xfe77:   [None     ,   'f'],   # MouseKeys_Accel_Enable
-0xfe78:   [None     ,   'f'],   # Overlay1_Enable
-0xfe79:   [None     ,   'f'],   # Overlay2_Enable
-0xfe7a:   [None     ,   'f'],   # AudibleBell_Enable
-0xfed0:   [None     ,   'f'],   # First_Virtual_Screen
-0xfed1:   [None     ,   'f'],   # Prev_Virtual_Screen
-0xfed2:   [None     ,   'f'],   # Next_Virtual_Screen
-0xfed4:   [None     ,   'f'],   # Last_Virtual_Screen
-0xfed5:   [None     ,   'f'],   # Terminate_Server
-0xfee0:   [None     ,   'f'],   # Pointer_Left
-0xfee1:   [None     ,   'f'],   # Pointer_Right
-0xfee2:   [None     ,   'f'],   # Pointer_Up
-0xfee3:   [None     ,   'f'],   # Pointer_Down
-0xfee4:   [None     ,   'f'],   # Pointer_UpLeft
-0xfee5:   [None     ,   'f'],   # Pointer_UpRight
-0xfee6:   [None     ,   'f'],   # Pointer_DownLeft
-0xfee7:   [None     ,   'f'],   # Pointer_DownRight
-0xfee8:   [None     ,   'f'],   # Pointer_Button_Dflt
-0xfee9:   [None     ,   'f'],   # Pointer_Button1
-0xfeea:   [None     ,   'f'],   # Pointer_Button2
-0xfeeb:   [None     ,   'f'],   # Pointer_Button3
-0xfeec:   [None     ,   'f'],   # Pointer_Button4
-0xfeed:   [None     ,   'f'],   # Pointer_Button5
-0xfeee:   [None     ,   'f'],   # Pointer_DblClick_Dflt
-0xfeef:   [None     ,   'f'],   # Pointer_DblClick1
-0xfef0:   [None     ,   'f'],   # Pointer_DblClick2
-0xfef1:   [None     ,   'f'],   # Pointer_DblClick3
-0xfef2:   [None     ,   'f'],   # Pointer_DblClick4
-0xfef3:   [None     ,   'f'],   # Pointer_DblClick5
-0xfef4:   [None     ,   'f'],   # Pointer_Drag_Dflt
-0xfef5:   [None     ,   'f'],   # Pointer_Drag1
-0xfef6:   [None     ,   'f'],   # Pointer_Drag2
-0xfef7:   [None     ,   'f'],   # Pointer_Drag3
-0xfef8:   [None     ,   'f'],   # Pointer_Drag4
-0xfef9:   [None     ,   'f'],   # Pointer_EnableKeys
-0xfefa:   [None     ,   'f'],   # Pointer_Accelerate
-0xfefb:   [None     ,   'f'],   # Pointer_DfltBtnNext
-0xfefc:   [None     ,   'f'],   # Pointer_DfltBtnPrev
-0xfefd:   [None     ,   'f'],   # Pointer_Drag5
+0xfe70:   [None    ,   'f'],   # AccessX_Enable
+0xfe71:   [None    ,   'f'],   # AccessX_Feedback_Enable
+0xfe72:   [None    ,   'f'],   # RepeatKeys_Enable
+0xfe73:   [None    ,   'f'],   # SlowKeys_Enable
+0xfe74:   [None    ,   'f'],   # BounceKeys_Enable
+0xfe75:   [None    ,   'f'],   # StickyKeys_Enable
+0xfe76:   [None    ,   'f'],   # MouseKeys_Enable
+0xfe77:   [None    ,   'f'],   # MouseKeys_Accel_Enable
+0xfe78:   [None    ,   'f'],   # Overlay1_Enable
+0xfe79:   [None    ,   'f'],   # Overlay2_Enable
+0xfe7a:   [None    ,   'f'],   # AudibleBell_Enable
+0xfed0:   [None    ,   'f'],   # First_Virtual_Screen
+0xfed1:   [None    ,   'f'],   # Prev_Virtual_Screen
+0xfed2:   [None    ,   'f'],   # Next_Virtual_Screen
+0xfed4:   [None    ,   'f'],   # Last_Virtual_Screen
+0xfed5:   [None    ,   'f'],   # Terminate_Server
+0xfee0:   [None    ,   'f'],   # Pointer_Left
+0xfee1:   [None    ,   'f'],   # Pointer_Right
+0xfee2:   [None    ,   'f'],   # Pointer_Up
+0xfee3:   [None    ,   'f'],   # Pointer_Down
+0xfee4:   [None    ,   'f'],   # Pointer_UpLeft
+0xfee5:   [None    ,   'f'],   # Pointer_UpRight
+0xfee6:   [None    ,   'f'],   # Pointer_DownLeft
+0xfee7:   [None    ,   'f'],   # Pointer_DownRight
+0xfee8:   [None    ,   'f'],   # Pointer_Button_Dflt
+0xfee9:   [None    ,   'f'],   # Pointer_Button1
+0xfeea:   [None    ,   'f'],   # Pointer_Button2
+0xfeeb:   [None    ,   'f'],   # Pointer_Button3
+0xfeec:   [None    ,   'f'],   # Pointer_Button4
+0xfeed:   [None    ,   'f'],   # Pointer_Button5
+0xfeee:   [None    ,   'f'],   # Pointer_DblClick_Dflt
+0xfeef:   [None    ,   'f'],   # Pointer_DblClick1
+0xfef0:   [None    ,   'f'],   # Pointer_DblClick2
+0xfef1:   [None    ,   'f'],   # Pointer_DblClick3
+0xfef2:   [None    ,   'f'],   # Pointer_DblClick4
+0xfef3:   [None    ,   'f'],   # Pointer_DblClick5
+0xfef4:   [None    ,   'f'],   # Pointer_Drag_Dflt
+0xfef5:   [None    ,   'f'],   # Pointer_Drag1
+0xfef6:   [None    ,   'f'],   # Pointer_Drag2
+0xfef7:   [None    ,   'f'],   # Pointer_Drag3
+0xfef8:   [None    ,   'f'],   # Pointer_Drag4
+0xfef9:   [None    ,   'f'],   # Pointer_EnableKeys
+0xfefa:   [None    ,   'f'],   # Pointer_Accelerate
+0xfefb:   [None    ,   'f'],   # Pointer_DfltBtnNext
+0xfefc:   [None    ,   'f'],   # Pointer_DfltBtnPrev
+0xfefd:   [None    ,   'f'],   # Pointer_Drag5
 0xff08:   ['\u0008',   'f'],   # BackSpace	/* back space, back char */
 0xff09:   ['\u0009',   'f'],   # Tab
 0xff0a:   ['\u000a',   'f'],   # Linefeed	/* Linefeed, LF */
@@ -1246,78 +1246,78 @@ KEYSYMS = {
 0xff14:   ['\u0014',   'f'],   # Scroll_Lock
 0xff15:   ['\u0015',   'f'],   # Sys_Req
 0xff1b:   ['\u001b',   'f'],   # Escape
-0xff20:   [None     ,   'f'],   # Multi_key
-0xff21:   [None     ,   'f'],   # Kanji
-0xff22:   [None     ,   'f'],   # Muhenkan
-0xff23:   [None     ,   'f'],   # Henkan_Mode
-0xff24:   [None     ,   'f'],   # Romaji
-0xff25:   [None     ,   'f'],   # Hiragana
-0xff26:   [None     ,   'f'],   # Katakana
-0xff27:   [None     ,   'f'],   # Hiragana_Katakana
-0xff28:   [None     ,   'f'],   # Zenkaku
-0xff29:   [None     ,   'f'],   # Hankaku
-0xff2a:   [None     ,   'f'],   # Zenkaku_Hankaku
-0xff2b:   [None     ,   'f'],   # Touroku
-0xff2c:   [None     ,   'f'],   # Massyo
-0xff2d:   [None     ,   'f'],   # Kana_Lock
-0xff2e:   [None     ,   'f'],   # Kana_Shift
-0xff2f:   [None     ,   'f'],   # Eisu_Shift
-0xff30:   [None     ,   'f'],   # Eisu_toggle
-0xff31:   [None     ,   'f'],   # Hangul
-0xff32:   [None     ,   'f'],   # Hangul_Start
-0xff33:   [None     ,   'f'],   # Hangul_End
-0xff34:   [None     ,   'f'],   # Hangul_Hanja
-0xff35:   [None     ,   'f'],   # Hangul_Jamo
-0xff36:   [None     ,   'f'],   # Hangul_Romaja
-0xff37:   [None     ,   'f'],   # Codeinput
-0xff38:   [None     ,   'f'],   # Hangul_Jeonja
-0xff39:   [None     ,   'f'],   # Hangul_Banja
-0xff3a:   [None     ,   'f'],   # Hangul_PreHanja
-0xff3b:   [None     ,   'f'],   # Hangul_PostHanja
-0xff3c:   [None     ,   'f'],   # SingleCandidate
-0xff3d:   [None     ,   'f'],   # MultipleCandidate
-0xff3e:   [None     ,   'f'],   # PreviousCandidate
-0xff3f:   [None     ,   'f'],   # Hangul_Special
-0xff50:   [None     ,   'f'],   # Home
-0xff51:   [None     ,   'f'],   # Left
-0xff52:   [None     ,   'f'],   # Up
-0xff53:   [None     ,   'f'],   # Right
-0xff54:   [None     ,   'f'],   # Down
-0xff55:   [None     ,   'f'],   # Prior
-0xff56:   [None     ,   'f'],   # Next
-0xff57:   [None     ,   'f'],   # End
-0xff58:   [None     ,   'f'],   # Begin
-0xff60:   [None     ,   'f'],   # Select
-0xff61:   [None     ,   'f'],   # Print
-0xff62:   [None     ,   'f'],   # Execute
-0xff63:   [None     ,   'f'],   # Insert
-0xff65:   [None     ,   'f'],   # Undo
-0xff66:   [None     ,   'f'],   # Redo
-0xff67:   [None     ,   'f'],   # Menu
-0xff68:   [None     ,   'f'],   # Find
-0xff69:   [None     ,   'f'],   # Cancel
-0xff6a:   [None     ,   'f'],   # Help
-0xff6b:   [None     ,   'f'],   # Break
-0xff7e:   [None     ,   'f'],   # Mode_switch
-0xff7f:   [None     ,   'f'],   # Num_Lock
+0xff20:   [None    ,   'f'],   # Multi_key
+0xff21:   [None    ,   'f'],   # Kanji
+0xff22:   [None    ,   'f'],   # Muhenkan
+0xff23:   [None    ,   'f'],   # Henkan_Mode
+0xff24:   [None    ,   'f'],   # Romaji
+0xff25:   [None    ,   'f'],   # Hiragana
+0xff26:   [None    ,   'f'],   # Katakana
+0xff27:   [None    ,   'f'],   # Hiragana_Katakana
+0xff28:   [None    ,   'f'],   # Zenkaku
+0xff29:   [None    ,   'f'],   # Hankaku
+0xff2a:   [None    ,   'f'],   # Zenkaku_Hankaku
+0xff2b:   [None    ,   'f'],   # Touroku
+0xff2c:   [None    ,   'f'],   # Massyo
+0xff2d:   [None    ,   'f'],   # Kana_Lock
+0xff2e:   [None    ,   'f'],   # Kana_Shift
+0xff2f:   [None    ,   'f'],   # Eisu_Shift
+0xff30:   [None    ,   'f'],   # Eisu_toggle
+0xff31:   [None    ,   'f'],   # Hangul
+0xff32:   [None    ,   'f'],   # Hangul_Start
+0xff33:   [None    ,   'f'],   # Hangul_End
+0xff34:   [None    ,   'f'],   # Hangul_Hanja
+0xff35:   [None    ,   'f'],   # Hangul_Jamo
+0xff36:   [None    ,   'f'],   # Hangul_Romaja
+0xff37:   [None    ,   'f'],   # Codeinput
+0xff38:   [None    ,   'f'],   # Hangul_Jeonja
+0xff39:   [None    ,   'f'],   # Hangul_Banja
+0xff3a:   [None    ,   'f'],   # Hangul_PreHanja
+0xff3b:   [None    ,   'f'],   # Hangul_PostHanja
+0xff3c:   [None    ,   'f'],   # SingleCandidate
+0xff3d:   [None    ,   'f'],   # MultipleCandidate
+0xff3e:   [None    ,   'f'],   # PreviousCandidate
+0xff3f:   [None    ,   'f'],   # Hangul_Special
+0xff50:   [None    ,   'f'],   # Home
+0xff51:   [None    ,   'f'],   # Left
+0xff52:   [None    ,   'f'],   # Up
+0xff53:   [None    ,   'f'],   # Right
+0xff54:   [None    ,   'f'],   # Down
+0xff55:   [None    ,   'f'],   # Prior
+0xff56:   [None    ,   'f'],   # Next
+0xff57:   [None    ,   'f'],   # End
+0xff58:   [None    ,   'f'],   # Begin
+0xff60:   [None    ,   'f'],   # Select
+0xff61:   [None    ,   'f'],   # Print
+0xff62:   [None    ,   'f'],   # Execute
+0xff63:   [None    ,   'f'],   # Insert
+0xff65:   [None    ,   'f'],   # Undo
+0xff66:   [None    ,   'f'],   # Redo
+0xff67:   [None    ,   'f'],   # Menu
+0xff68:   [None    ,   'f'],   # Find
+0xff69:   [None    ,   'f'],   # Cancel
+0xff6a:   [None    ,   'f'],   # Help
+0xff6b:   [None    ,   'f'],   # Break
+0xff7e:   [None    ,   'f'],   # Mode_switch
+0xff7f:   [None    ,   'f'],   # Num_Lock
 0xff80:   ['\u0020',   'f'],   # KP_Space	/* space */
 0xff89:   ['\u0009',   'f'],   # KP_Tab
 0xff8d:   ['\u000d',   'f'],   # KP_Enter	/* enter */
-0xff91:   [None     ,   'f'],   # KP_F1
-0xff92:   [None     ,   'f'],   # KP_F2
-0xff93:   [None     ,   'f'],   # KP_F3
-0xff94:   [None     ,   'f'],   # KP_F4
-0xff95:   [None     ,   'f'],   # KP_Home
-0xff96:   [None     ,   'f'],   # KP_Left
-0xff97:   [None     ,   'f'],   # KP_Up
-0xff98:   [None     ,   'f'],   # KP_Right
-0xff99:   [None     ,   'f'],   # KP_Down
-0xff9a:   [None     ,   'f'],   # KP_Prior
-0xff9b:   [None     ,   'f'],   # KP_Next
-0xff9c:   [None     ,   'f'],   # KP_End
-0xff9d:   [None     ,   'f'],   # KP_Begin
-0xff9e:   [None     ,   'f'],   # KP_Insert
-0xff9f:   [None     ,   'f'],   # KP_Delete
+0xff91:   [None    ,   'f'],   # KP_F1
+0xff92:   [None    ,   'f'],   # KP_F2
+0xff93:   [None    ,   'f'],   # KP_F3
+0xff94:   [None    ,   'f'],   # KP_F4
+0xff95:   [None    ,   'f'],   # KP_Home
+0xff96:   [None    ,   'f'],   # KP_Left
+0xff97:   [None    ,   'f'],   # KP_Up
+0xff98:   [None    ,   'f'],   # KP_Right
+0xff99:   [None    ,   'f'],   # KP_Down
+0xff9a:   [None    ,   'f'],   # KP_Prior
+0xff9b:   [None    ,   'f'],   # KP_Next
+0xff9c:   [None    ,   'f'],   # KP_End
+0xff9d:   [None    ,   'f'],   # KP_Begin
+0xff9e:   [None    ,   'f'],   # KP_Insert
+0xff9f:   [None    ,   'f'],   # KP_Delete
 0xffaa:   ['\u002a',   'f'],   # KP_Multiply
 0xffab:   ['\u002b',   'f'],   # KP_Add
 0xffac:   ['\u002c',   'f'],   # KP_Separator	/* separator, often comma */
@@ -1335,57 +1335,57 @@ KEYSYMS = {
 0xffb8:   ['\u0038',   'f'],   # KP_8
 0xffb9:   ['\u0039',   'f'],   # KP_9
 0xffbd:   ['\u003d',   'f'],   # KP_Equal	/* equals */
-0xffbe:   [None     ,   'f'],   # F1
-0xffbf:   [None     ,   'f'],   # F2
-0xffc0:   [None     ,   'f'],   # F3
-0xffc1:   [None     ,   'f'],   # F4
-0xffc2:   [None     ,   'f'],   # F5
-0xffc3:   [None     ,   'f'],   # F6
-0xffc4:   [None     ,   'f'],   # F7
-0xffc5:   [None     ,   'f'],   # F8
-0xffc6:   [None     ,   'f'],   # F9
-0xffc7:   [None     ,   'f'],   # F10
-0xffc8:   [None     ,   'f'],   # F11
-0xffc9:   [None     ,   'f'],   # F12
-0xffca:   [None     ,   'f'],   # F13
-0xffcb:   [None     ,   'f'],   # F14
-0xffcc:   [None     ,   'f'],   # F15
-0xffcd:   [None     ,   'f'],   # F16
-0xffce:   [None     ,   'f'],   # F17
-0xffcf:   [None     ,   'f'],   # F18
-0xffd0:   [None     ,   'f'],   # F19
-0xffd1:   [None     ,   'f'],   # F20
-0xffd2:   [None     ,   'f'],   # F21
-0xffd3:   [None     ,   'f'],   # F22
-0xffd4:   [None     ,   'f'],   # F23
-0xffd5:   [None     ,   'f'],   # F24
-0xffd6:   [None     ,   'f'],   # F25
-0xffd7:   [None     ,   'f'],   # F26
-0xffd8:   [None     ,   'f'],   # F27
-0xffd9:   [None     ,   'f'],   # F28
-0xffda:   [None     ,   'f'],   # F29
-0xffdb:   [None     ,   'f'],   # F30
-0xffdc:   [None     ,   'f'],   # F31
-0xffdd:   [None     ,   'f'],   # F32
-0xffde:   [None     ,   'f'],   # F33
-0xffdf:   [None     ,   'f'],   # F34
-0xffe0:   [None     ,   'f'],   # F35
-0xffe1:   [None     ,   'f'],   # Shift_L
-0xffe2:   [None     ,   'f'],   # Shift_R
-0xffe3:   [None     ,   'f'],   # Control_L
-0xffe4:   [None     ,   'f'],   # Control_R
-0xffe5:   [None     ,   'f'],   # Caps_Lock
-0xffe6:   [None     ,   'f'],   # Shift_Lock
-0xffe7:   [None     ,   'f'],   # Meta_L
-0xffe8:   [None     ,   'f'],   # Meta_R
-0xffe9:   [None     ,   'f'],   # Alt_L
-0xffea:   [None     ,   'f'],   # Alt_R
-0xffeb:   [None     ,   'f'],   # Super_L
-0xffec:   [None     ,   'f'],   # Super_R
-0xffed:   [None     ,   'f'],   # Hyper_L
-0xffee:   [None     ,   'f'],   # Hyper_R
-0xffff:   [None     ,   'f'],   # Delete
-0xffffff: [None     ,   'f'],   # VoidSymbol
+0xffbe:   [None    ,   'f'],   # F1
+0xffbf:   [None    ,   'f'],   # F2
+0xffc0:   [None    ,   'f'],   # F3
+0xffc1:   [None    ,   'f'],   # F4
+0xffc2:   [None    ,   'f'],   # F5
+0xffc3:   [None    ,   'f'],   # F6
+0xffc4:   [None    ,   'f'],   # F7
+0xffc5:   [None    ,   'f'],   # F8
+0xffc6:   [None    ,   'f'],   # F9
+0xffc7:   [None    ,   'f'],   # F10
+0xffc8:   [None    ,   'f'],   # F11
+0xffc9:   [None    ,   'f'],   # F12
+0xffca:   [None    ,   'f'],   # F13
+0xffcb:   [None    ,   'f'],   # F14
+0xffcc:   [None    ,   'f'],   # F15
+0xffcd:   [None    ,   'f'],   # F16
+0xffce:   [None    ,   'f'],   # F17
+0xffcf:   [None    ,   'f'],   # F18
+0xffd0:   [None    ,   'f'],   # F19
+0xffd1:   [None    ,   'f'],   # F20
+0xffd2:   [None    ,   'f'],   # F21
+0xffd3:   [None    ,   'f'],   # F22
+0xffd4:   [None    ,   'f'],   # F23
+0xffd5:   [None    ,   'f'],   # F24
+0xffd6:   [None    ,   'f'],   # F25
+0xffd7:   [None    ,   'f'],   # F26
+0xffd8:   [None    ,   'f'],   # F27
+0xffd9:   [None    ,   'f'],   # F28
+0xffda:   [None    ,   'f'],   # F29
+0xffdb:   [None    ,   'f'],   # F30
+0xffdc:   [None    ,   'f'],   # F31
+0xffdd:   [None    ,   'f'],   # F32
+0xffde:   [None    ,   'f'],   # F33
+0xffdf:   [None    ,   'f'],   # F34
+0xffe0:   [None    ,   'f'],   # F35
+0xffe1:   [None    ,   'f'],   # Shift_L
+0xffe2:   [None    ,   'f'],   # Shift_R
+0xffe3:   [None    ,   'f'],   # Control_L
+0xffe4:   [None    ,   'f'],   # Control_R
+0xffe5:   [None    ,   'f'],   # Caps_Lock
+0xffe6:   [None    ,   'f'],   # Shift_Lock
+0xffe7:   [None    ,   'f'],   # Meta_L
+0xffe8:   [None    ,   'f'],   # Meta_R
+0xffe9:   [None    ,   'f'],   # Alt_L
+0xffea:   [None    ,   'f'],   # Alt_R
+0xffeb:   [None    ,   'f'],   # Super_L
+0xffec:   [None    ,   'f'],   # Super_R
+0xffed:   [None    ,   'f'],   # Hyper_L
+0xffee:   [None    ,   'f'],   # Hyper_R
+0xffff:   [None    ,   'f'],   # Delete
+0xffffff: [None    ,   'f'],   # VoidSymbol
 
 # Various XFree86 extensions since X11R6.4
 # http://cvsweb.xfree86.org/cvsweb/xc/include/keysymdef.h
@@ -1405,7 +1405,7 @@ KEYSYMS = {
 # Armenian
 # (not used in any XFree86 4.4 kbd layouts, where /usr/lib/X11/xkb/symbols/am
 # uses directly Unicode-mapped hexadecimal values instead)
-0x14a1:   [None     ,   'r'],   # Armenian_eternity
+0x14a1:   [None    ,   'r'],   # Armenian_eternity
 0x14a2:   ['\u0587',   'u'],   # Armenian_ligature_ew
 0x14a3:   ['\u0589',   'u'],   # Armenian_verjaket
 0x14a4:   ['\u0029',   'r'],   # Armenian_parenright
@@ -1658,22 +1658,22 @@ KEYSYMS = {
 # (of these, in XFree86 4.4 only Gcaron, gcaron are actually used,
 # e.g. in /usr/lib/X11/xkb/symbols/sapmi; the lack of Unicode
 # equivalents for the others suggests that they are bogus)
-0x16a2:   [None     ,   'r'],   # Ccedillaabovedot
+0x16a2:   [None    ,   'r'],   # Ccedillaabovedot
 0x16a3:   ['\u1e8a',   'u'],   # Xabovedot
-0x16a5:   [None     ,   'r'],   # Qabovedot
+0x16a5:   [None    ,   'r'],   # Qabovedot
 0x16a6:   ['\u012c',   'u'],   # Ibreve
-0x16a7:   [None     ,   'r'],   # IE
-0x16a8:   [None     ,   'r'],   # UO
+0x16a7:   [None    ,   'r'],   # IE
+0x16a8:   [None    ,   'r'],   # UO
 0x16a9:   ['\u01b5',   'u'],   # Zstroke
 0x16aa:   ['\u01e6',   'u'],   # Gcaron
 0x16af:   ['\u019f',   'u'],   # Obarred
-0x16b2:   [None     ,   'r'],   # ccedillaabovedot
+0x16b2:   [None    ,   'r'],   # ccedillaabovedot
 0x16b3:   ['\u1e8b',   'u'],   # xabovedot
-0x16b4:   [None     ,   'r'],   # Ocaron
-0x16b5:   [None     ,   'r'],   # qabovedot
+0x16b4:   [None    ,   'r'],   # Ocaron
+0x16b5:   [None    ,   'r'],   # qabovedot
 0x16b6:   ['\u012d',   'u'],   # ibreve
-0x16b7:   [None     ,   'r'],   # ie
-0x16b8:   [None     ,   'r'],   # uo
+0x16b7:   [None    ,   'r'],   # ie
+0x16b8:   [None    ,   'r'],   # uo
 0x16b9:   ['\u01b6',   'u'],   # zstroke
 0x16ba:   ['\u01e7',   'u'],   # gcaron
 0x16bd:   ['\u01d2',   'u'],   # ocaron
@@ -1685,11 +1685,11 @@ KEYSYMS = {
 # (none of these are actually used in any XFree86 4.4 kbd layouts,
 # and the lack of Unicode equivalents suggests that they are bogus)
 0x16d1:   ['\u1e36',   'u'],   # Lbelowdot
-0x16d2:   [None     ,   'r'],   # Lstrokebelowdot
-0x16d3:   [None     ,   'r'],   # Gtilde
+0x16d2:   [None    ,   'r'],   # Lstrokebelowdot
+0x16d3:   [None    ,   'r'],   # Gtilde
 0x16e1:   ['\u1e37',   'u'],   # lbelowdot
-0x16e2:   [None     ,   'r'],   # lstrokebelowdot
-0x16e3:   [None     ,   'r'],   # gtilde
+0x16e2:   [None    ,   'r'],   # lstrokebelowdot
+0x16e3:   [None    ,   'r'],   # gtilde
 
 # Vietnamese
 # (none of these are actually used in any XFree86 4.4 kbd layouts; they are
