@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 from setuptools import setup
+from distutils.command.build import build
+
+class BuildWithCompile(build):
+    sub_commands = [('compile_catalog', None)] + build.sub_commands
 
 setup(name='screenkey', version='1.3',
       description='A screencast tool to display keys',
@@ -41,4 +45,7 @@ setup(name='screenkey', version='1.3',
           ('share/doc/screenkey', ['README.rst', 'NEWS.rst']),
           ('share/metainfo', ['data/org.thregr.screenkey.metainfo.xml'])
       ],
+      cmdclass={
+          'build': BuildWithCompile,
+      },
 )
