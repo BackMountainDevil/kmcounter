@@ -42,8 +42,7 @@ def load_button_pixbufs(color):
     global BUTTONS_SVG
 
     if BUTTONS_SVG is None:
-        module_path = os.path.dirname(__file__)
-        image_path = os.path.join(module_path, 'images', 'mouse.svg')
+        image_path = os.path.join(MODULE_DIR, 'images', 'mouse.svg')
         with open(image_path) as svg_file:
             BUTTONS_SVG = svg_file.readlines()
 
