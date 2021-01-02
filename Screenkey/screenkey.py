@@ -276,19 +276,12 @@ class Screenkey(Gtk.Window):
         for index, button_state in enumerate(self.button_states):
             if button_state is None:
                 continue
-            if button_state.pressed:
+            delta_time = (datetime.now() - button_state.stamp).total_seconds()
+            if button_state.pressed or delta_time < 1/30:
                 alpha = 255
             else:
-                if self.options.button_hide_duration > 0:
-                    delta_time = (datetime.now() - button_state.stamp).total_seconds()
-                    hide_time = delta_time / self.options.button_hide_duration
-                else:
-                    hide_time = 1
-                if hide_time < 1:
-                    alpha = int(255 * (1 - hide_time))
-                else:
-                    self.button_states[index] = None
-                    continue
+                hide_time = delta_time / self.options.button_hide_duration
+                alpha = int(127 * (1 - min(1, hide_time)))
 
             if not copied:
                 pixbuf = pixbuf.copy()
@@ -296,8 +289,11 @@ class Screenkey(Gtk.Window):
             self.button_pixbufs[button_state.btn].composite(
                 pixbuf, 0, 0, pixbuf.get_width(), pixbuf.get_height(),
                 0, 0, 1, 1,
-                GdkPixbuf.InterpType.NEAREST, alpha
-            )
+                GdkPixbuf.InterpType.NEAREST, alpha)
+
+            if not button_state.pressed and \
+               delta_time >= self.options.button_hide_duration:
+                self.button_states[index] = None
 
         scale = self.height / pixbuf.get_height()
         if scale != 1:
