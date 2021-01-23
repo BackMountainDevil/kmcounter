@@ -5,7 +5,7 @@ from distutils.command.build import build
 class BuildWithCompile(build):
     sub_commands = [('compile_catalog', None)] + build.sub_commands
 
-setup(name='screenkey', version='1.3',
+setup(name='screenkey', version='1.4',
       description='A screencast tool to display keys',
 
       author='Pablo Seminario',

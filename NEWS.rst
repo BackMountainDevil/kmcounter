@@ -1,3 +1,15 @@
+screenkey 1.4
+-------------
+
+- Internationalization/catalog handling during installation is now
+  handled with Babel (``python-distutils-extra`` is no longer used).
+- Improved highlighting of recent mouse activity (makes fast actions
+  such as double-click more distinct).
+- Fixed another resizing issue not working properly when attempting
+  to shrink the window size.
+- Removed Python 2 remains (thanks to Jürgen Gmach).
+
+
 screenkey 1.3
 -------------
 
