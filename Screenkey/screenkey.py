@@ -24,6 +24,7 @@ from gi.repository import Gtk, Gdk, GdkPixbuf, Pango, GObject
 import cairo
 
 
+# Gtk shortcuts
 START = Gtk.Align.START
 CENTER = Gtk.Align.CENTER
 END = Gtk.Align.END
@@ -36,6 +37,12 @@ HORIZONTAL = Gtk.Orientation.HORIZONTAL
 VERTICAL = Gtk.Orientation.VERTICAL
 IF_VALID = Gtk.SpinButtonUpdatePolicy.IF_VALID
 
+
+BUTTONS_MIN_BLINK = 1/30        # Minimum persistence for any action (s)
+BUTTONS_REL_BRIGHT = 127        # Residual brightness after button release
+
+
+# SVG Data for mouse buttons
 BUTTONS_SVG = None
 
 def load_button_pixbufs(color):
@@ -277,11 +284,11 @@ class Screenkey(Gtk.Window):
             if button_state is None:
                 continue
             delta_time = (datetime.now() - button_state.stamp).total_seconds()
-            if button_state.pressed or delta_time < 1/30:
+            if button_state.pressed or delta_time < BUTTONS_MIN_BLINK:
                 alpha = 255
             else:
                 hide_time = delta_time / self.options.button_hide_duration
-                alpha = int(127 * (1 - min(1, hide_time)))
+                alpha = int(BUTTONS_REL_BRIGHT * (1 - min(1, hide_time)))
 
             if not copied:
                 pixbuf = pixbuf.copy()
