@@ -286,9 +286,11 @@ class Screenkey(Gtk.Window):
             delta_time = (datetime.now() - button_state.stamp).total_seconds()
             if button_state.pressed or delta_time < BUTTONS_MIN_BLINK:
                 alpha = 255
-            else:
+            elif self.options.button_hide_duration > 0:
                 hide_time = delta_time / self.options.button_hide_duration
                 alpha = int(BUTTONS_REL_BRIGHT * (1 - min(1, hide_time)))
+            else:
+                alpha = 0
 
             if not copied:
                 pixbuf = pixbuf.copy()
