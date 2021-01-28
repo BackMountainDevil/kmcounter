@@ -54,6 +54,7 @@ Dependencies:
 - PyGObject (python3-gi)
 - GTK 3 (via GI bindings)
 - Pycairo (python3-cairo)
+- Cairo GI bindings (python3-gi-cairo)
 - setuptools (python3-setuptools, build only)
 - babel (python3-babel, build only)
 - slop (https://github.com/naelstrof/slop)
@@ -62,7 +63,8 @@ Dependencies:
 
 Install dependencies (on Debian/Ubuntu)::
 
-  sudo apt-get install python3-gi gir1.2-gtk-3.0 python3-cairo
+  sudo apt-get install python3-gi gir1.2-gtk-3.0
+  sudo apt-get install python3-gi-cairo python3-cairo
   sudo apt-get install python3-setuptools python3-babel
   sudo apt-get install fonts-font-awesome slop
 
