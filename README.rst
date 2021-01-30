@@ -37,11 +37,11 @@ Debian / Ubuntu: `Debian tracker <https://packages.debian.org/search?searchon=so
 Fedora / EPEL: `Fedora package <https://src.fedoraproject.org/rpms/screenkey>`_
   ``sudo dnf install screenkey``
 
-Gentoo: `Gentoo package <https://packages.gentoo.org/packages/x11-misc/screenkey`_
+Gentoo: `Gentoo package <https://packages.gentoo.org/packages/x11-misc/screenkey>`_
   ``sudo emerge -av x11-misc/screenkey``
 
 Screenkey is available on `other distributions
-<https://repology.org/project/screenkey/versions`_ too.
+<https://repology.org/project/screenkey/versions>`_ too.
 
 
 From source
