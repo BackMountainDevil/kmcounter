@@ -1023,6 +1023,54 @@ class Screenkey(Gtk.Window):
         self.about.show()
 
 
+    def start_lockscreen_detection(self):
+        import threading
+        from dbus import SessionBus
+        from dbus.mainloop.glib import DBusGMainLoop
+
+        def filter_bus_message(bus, message):
+            message_member = message.get_member()
+
+            if not self.enabled or message_member != "ActiveChanged":
+                return
+
+            args_list = message.get_args_list()
+            if args_list[0]:
+                self.logger.debug("Lock Screen; Screenkey disabled.")
+                self.labelmngr.stop()
+            else:
+                self.logger.debug("Unlock Screen; Screenkey enabled.")
+                self.restart_labelmanager()
+
+        def lockscreen_detection_loop():
+            DBusGMainLoop(set_as_default=True)
+            session_bus = SessionBus()
+
+            signal_interface = None
+            for dbus_string in session_bus.list_names():
+                bus_name = str(dbus_string)
+                if bus_name.endswith('ScreenSaver'):
+                    signal_interface = bus_name
+                    self.logger.debug("ScreenSaver dbus signal interface found; password should not show when unlocking the screen.")
+                    break
+
+            if not signal_interface:
+                self.logger.debug("ScreenSaver dbus signal interface not found; beware: password may show when unlocking the screen!")
+                del(session_bus)
+                DBusGMainLoop(set_as_default=False)
+                return
+
+            session_bus.add_match_string(f"type='signal',interface='{signal_interface}'")
+            session_bus.add_message_filter(filter_bus_message)
+            mainloop = GLib.MainLoop()
+            mainloop.run()
+
+        thread = threading.Thread(target=lockscreen_detection_loop)
+        thread.daemon = True
+        thread.start()
+
+
     def run(self):
+        self.start_lockscreen_detection()
         Gtk.main()
         return self.exit_status
