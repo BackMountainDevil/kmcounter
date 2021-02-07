@@ -1024,7 +1024,8 @@ class Screenkey(Gtk.Window):
 
 
     def start_lockscreen_detection(self):
-        import threading
+        from re import match
+        from threading import Thread
         from dbus import SessionBus
         from dbus.mainloop.glib import DBusGMainLoop
 
@@ -1036,26 +1037,27 @@ class Screenkey(Gtk.Window):
 
             args_list = message.get_args_list()
             if args_list[0]:
-                self.logger.debug("Lock Screen; Screenkey disabled.")
                 self.labelmngr.stop()
+                self.logger.debug("Lock Screen; Screenkey disabled.")
             else:
-                self.logger.debug("Unlock Screen; Screenkey enabled.")
                 self.restart_labelmanager()
+                self.logger.debug("Unlock Screen; Screenkey enabled.")
 
         def lockscreen_detection_loop():
             DBusGMainLoop(set_as_default=True)
             session_bus = SessionBus()
 
             signal_interface = None
+
             for dbus_string in session_bus.list_names():
                 bus_name = str(dbus_string)
-                if bus_name.endswith('ScreenSaver'):
+                if match(r"org\.(\w+)\.ScreenSaver", bus_name):
                     signal_interface = bus_name
-                    self.logger.debug("ScreenSaver dbus signal interface found; password should not show when unlocking the screen.")
+                    self.logger.debug(f"DBUS signal interface found: \"{signal_interface}\" ; password should not show when unlocking the screen.")
                     break
 
             if not signal_interface:
-                self.logger.debug("ScreenSaver dbus signal interface not found; beware: password may show when unlocking the screen!")
+                self.logger.debug("ScreenSaver DBUS signal interface not found; beware: password may show when unlocking the screen!")
                 del(session_bus)
                 DBusGMainLoop(set_as_default=False)
                 return
@@ -1065,7 +1067,7 @@ class Screenkey(Gtk.Window):
             mainloop = GLib.MainLoop()
             mainloop.run()
 
-        thread = threading.Thread(target=lockscreen_detection_loop)
+        thread = Thread(target=lockscreen_detection_loop)
         thread.daemon = True
         thread.start()
 
