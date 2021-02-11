@@ -459,6 +459,52 @@ If you need to record a terminal session you'll have to switch to
 another X11 terminal emulator such as xterm, urxvt, mlterm, ...
 
 
+Localization
+------------
+
+Adding a new language translation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+After cloning the source repository, initialize a fresh new localization
+as following::
+
+  ./setup.py extract_messages
+  ./setup.py init_catalog -l <locale>
+
+Where ``<locale>`` is the locale name such as ``de_DE``.
+
+The generated template is located in
+``Screenkey/locale/<locale>/LC_MESSAGES/screenkey.po`` and can be edited
+with a text editor or using a PO editing tool such as poedit_.
+
+.. _poedit: https://poedit.net/
+
+
+Updating an existing translation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To update a pre-exiting language translation, execute::
+
+  ./setup.py extract_messages
+  ./setup.py update_catalog -l <locale>
+
+then review the updated localization in
+``Screenkey/locale/<locale>/LC_MESSAGES/screenkey.po``.
+
+
+Testing a translation
+~~~~~~~~~~~~~~~~~~~~~
+
+Localization can be tested by compiling the language catalog and running
+``screenkey`` from the source directory::
+
+  ./setup.py compile_catalog -l <locale>
+  ./screenkey
+
+The catalog needs to be compiled every time the localization has been
+changed to reflect the newest changes.
+
+
 Authors and Copyright
 ---------------------
 
