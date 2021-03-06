@@ -433,7 +433,6 @@ if __name__ == '__main__':
             values[k] = getattr(data, k)
         print(values)
 
-    glib.threads_init()
     kl = InputListener(callback)
     try:
         # keep running only while the listener is alive

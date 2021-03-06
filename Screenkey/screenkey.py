@@ -17,10 +17,7 @@ import gi
 gi.require_version('Gtk', '3.0')
 gi.require_version('Pango', '1.0')
 
-from gi.repository import GLib
-GLib.threads_init()
-
-from gi.repository import Gtk, Gdk, GdkPixbuf, Pango, GObject
+from gi.repository import GLib, Gtk, Gdk, GdkPixbuf, Pango, GObject
 import cairo
 
 
