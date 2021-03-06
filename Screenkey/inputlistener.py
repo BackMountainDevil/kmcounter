@@ -169,11 +169,10 @@ class InputType:
 
 
 class InputListener(threading.Thread):
-    def __init__(self, kbd_callback, btn_callback, input_types=InputType.all,
+    def __init__(self, event_callback, input_types=InputType.all,
                  kbd_compose=True, kbd_translate=True):
         super().__init__()
-        self.kbd_callback = kbd_callback
-        self.btn_callback = btn_callback
+        self.event_callback = event_callback
         self.input_types = input_types
         self.kbd_compose = kbd_compose
         self.kbd_translate = kbd_translate
@@ -196,19 +195,15 @@ class InputListener(threading.Thread):
             xlib.XSendEvent(self.replay_dpy, self.replay_win, False, 0, fwd_ev)
 
 
-    def _kbd_event_callback(self, data):
-        self.kbd_callback(data)
-        return False
-
-    def _btn_event_callback(self, data):
-        self.btn_callback(data)
+    def _event_callback(self, data):
+        self.event_callback(data)
         return False
 
     def _event_processed(self, data):
         data.symbol = xlib.XKeysymToString(data.keysym)
         if data.string is None:
             data.string = keysym_to_unicode(data.keysym)
-        glib.idle_add(self._kbd_event_callback, data)
+        glib.idle_add(self._event_callback, data)
 
 
     def _event_modifiers(self, kev, data):
@@ -328,7 +323,7 @@ class InputListener(threading.Thread):
     def _btn_process(self, ev):
         if ev.type in [xlib.ButtonPress, xlib.ButtonRelease]:
             data = ButtonData(ev.xbutton.button, ev.type)
-            glib.idle_add(self._btn_event_callback, data)
+            glib.idle_add(self._event_callback, data)
 
 
     def run(self):
@@ -353,8 +348,7 @@ class InputListener(threading.Thread):
             xlib.XCloseDisplay(self.replay_dpy)
 
             # cheap wakeup() equivalent for compatibility
-            glib.idle_add(self._kbd_event_callback, None)
-            glib.idle_add(self._btn_event_callback, None)
+            glib.idle_add(self._event_callback, None)
 
             self.stopped = True
             self.lock.release()

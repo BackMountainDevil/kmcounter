@@ -3,6 +3,7 @@
 # Copyright(c) 2015-2016: wave++ "Yuri D'Elia" <wavexx@thregr.org>
 # Copyright(c) 2019-2020: Yuto Tokunaga <yuntan.sub1@gmail.com>
 
+from . import inputlistener
 from .inputlistener import InputListener, InputType
 
 from gi.repository import GLib
@@ -197,9 +198,9 @@ class LabelManager:
         self.stop()
         compose = (self.key_mode == 'composed')
         translate = (self.key_mode in ['composed', 'translated'])
-        self.kl = InputListener(self.key_press, self.btn_press,
-                                InputType.keyboard | InputType.button, compose,
-                                translate)
+        self.kl = InputListener(self.event_handler,
+                                InputType.keyboard | InputType.button,
+                                compose, translate)
         self.kl.start()
         self.logger.debug("Thread started.")
 
@@ -315,11 +316,21 @@ class LabelManager:
         self.update_text(True)
 
 
-    def key_press(self, event):
+    def event_handler(self, event):
         if event is None:
             self.logger.debug("inputlistener failure: {}".format(str(self.kl.error)))
             self.label_listener(None, None)
             return
+
+        if isinstance(event, inputlistener.KeyData):
+            self.key_press(event)
+        elif isinstance(event, inputlistener.ButtonData):
+            self.btn_press(event)
+        else:
+            self.logger.error("unhandled event type {}".format(type(event)))
+
+
+    def key_press(self, event):
         if event.symbol is None:
             # TODO: Investigate what causes this to happen.
             # I caught it once in pdb, but in this function, not in inputlistener,
