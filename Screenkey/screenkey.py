@@ -428,8 +428,13 @@ class Screenkey(Gtk.Window):
         if self.timer_hide is not None:
             GObject.source_remove(self.timer_hide)
             self.timer_hide = None
-        if self.options.timeout > 0 and not any(b and b.pressed for b in self.button_states):
-            self.timer_hide = GObject.timeout_add(self.options.timeout * 1000, self.on_timeout_main)
+        if self.options.timeout > 0:
+            # hide automatically if mouse mode is disabled. keep the
+            # window around otherwise as long as any of the visible keys
+            # (mouse or modifiers) is still held
+            if not self.options.mouse or \
+               not any(b and b.pressed for b in self.button_states):
+                self.timer_hide = GObject.timeout_add(self.options.timeout * 1000, self.on_timeout_main)
 
 
     def on_label_change(self, markup, synthetic):
