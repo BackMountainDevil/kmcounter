@@ -46,6 +46,8 @@ def main():
                     help=_("set vertical position"))
     ap.add_argument("--persist", action='store_true', default=None,
                     help=_("make window persistent"))
+    ap.add_argument("--window", action='store_true', default=None,
+                    help=_("use a regular window for display (implies --persist)"))
     ap.add_argument("-s", "--font-size", choices=FONT_SIZES,
                     help=_("set font size"))
     ap.add_argument("-g", "--geometry", type=geometry,
@@ -92,10 +94,12 @@ def main():
 
     # Set options
     options = Options()
-    for arg in ['timeout', 'position', 'persist', 'font_desc', 'font_color', 'bg_color',
-                'font_size', 'geometry', 'key_mode', 'bak_mode', 'mods_mode', 'mods_only',
-                'multiline', 'vis_shift', 'vis_space', 'screen', 'no_systray',
-                'opacity', 'ignore', 'compr_cnt', 'start_disabled', 'mouse', 'button_hide_duration']:
+    for arg in ['timeout', 'position', 'persist', 'window', 'font_desc',
+                'font_color', 'bg_color', 'font_size', 'geometry',
+                'key_mode', 'bak_mode', 'mods_mode', 'mods_only',
+                'multiline', 'vis_shift', 'vis_space', 'screen',
+                'no_systray', 'opacity', 'ignore', 'compr_cnt',
+                'start_disabled', 'mouse', 'button_hide_duration']:
         if getattr(args, arg) is not None:
             options[arg] = getattr(args, arg)
 

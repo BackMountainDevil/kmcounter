@@ -86,8 +86,6 @@ class Screenkey(Gtk.Window):
     STATE_FILE = os.path.join(GLib.get_user_config_dir(), 'screenkey.json')
 
     def __init__(self, logger, options, show_settings=False):
-        Gtk.Window.__init__(self, Gtk.WindowType.POPUP)
-
         self.logger = logger
         self.logger.debug("{} {}".format(APP_NAME, VERSION))
 
@@ -102,6 +100,7 @@ class Screenkey(Gtk.Window):
                             'ignore': [],
                             'position': 'bottom',
                             'persist': False,
+                            'window': False,
                             'font_desc': 'Sans Bold',
                             'font_size': 'medium',
                             'font_color': 'white',
@@ -132,6 +131,13 @@ class Screenkey(Gtk.Window):
             for k, v in options.items():
                 if v is not None:
                     self.options[k] = v
+
+
+        if not self.options.window:
+            Gtk.Window.__init__(self, Gtk.WindowType.POPUP)
+        else:
+            self.options.persist = True
+            Gtk.Window.__init__(self, Gtk.WindowType.TOPLEVEL)
 
         self.set_keep_above(True)
         self.set_accept_focus(False)
