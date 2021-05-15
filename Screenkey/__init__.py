@@ -16,7 +16,7 @@ gettext.install('screenkey', os.path.join(MODULE_DIR, 'locale'))
 APP_NAME = "Screenkey"
 APP_DESC = _("Screencast your keys")
 APP_URL = 'https://www.thregr.org/~wavexx/software/screenkey/'
-VERSION = '1.4'
+VERSION = '1.5'
 
 SLOP_URL = 'https://github.com/naelstrof/slop'
 ERROR_URL = 'https://www.thregr.org/~wavexx/software/screenkey/#troubleshooting'

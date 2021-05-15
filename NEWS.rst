@@ -1,3 +1,16 @@
+screenkey 1.5
+-------------
+
+- New LockScreen detection from Marc Lavallée prevents passwords from
+  being shown right after unlocking the screen when possible (new
+  ``dbus`` dependency required).
+- New German translation thanks to Maik Schmalle.
+- Fix regression that would keep the overlay visible when using Ctrl
+  sequences with the mouse visualization disabled.
+- Fix regression causing a backtrace instead of a proper error message
+  during initialization errors.
+
+
 screenkey 1.4
 -------------
 

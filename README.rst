@@ -74,7 +74,7 @@ Install dependencies (on Debian/Ubuntu)::
   sudo apt-get install python3-gi gir1.2-gtk-3.0
   sudo apt-get install python3-gi-cairo python3-cairo
   sudo apt-get install python3-setuptools python3-babel
-  sudo apt-get install fonts-font-awesome slop
+  sudo apt-get install python3-dbus fonts-font-awesome slop
 
 When using GNOME also install::
 
