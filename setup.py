@@ -35,7 +35,7 @@ setup(name='screenkey', version='1.4',
       scripts=['screenkey'],
       packages=['Screenkey'],
       setup_requires=['setuptools', 'babel'],
-      install_requires=['PyGObject', 'pycairo'],
+      install_requires=['PyGObject', 'pycairo', 'dbus'],
       package_data={'': [
           'images/mouse.svg',
           'locale/*/LC_MESSAGES/screenkey.mo'

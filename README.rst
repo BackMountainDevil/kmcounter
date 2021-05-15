@@ -62,6 +62,7 @@ Dependencies:
 - GTK 3 (via GI bindings)
 - Pycairo (python3-cairo)
 - Cairo GI bindings (python3-gi-cairo)
+- Python DBUS (python3-dbus)
 - setuptools (python3-setuptools, build only)
 - babel (python3-babel, build only)
 - slop (https://github.com/naelstrof/slop)
