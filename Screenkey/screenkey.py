@@ -223,7 +223,7 @@ class Screenkey(Gtk.Window):
         """Store options"""
         try:
             with open(self.STATE_FILE, 'w') as f:
-                json.dump(options._store, f)
+                json.dump(options._store, f, indent=4)
                 self.logger.debug("Options saved.")
         except OSError:
             self.logger.debug("Cannot open %s." % self.STATE_FILE)
