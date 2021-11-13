@@ -162,7 +162,7 @@ class Screenkey(Gtk.Window):
         self.connect("draw", self.on_draw)
 
         scr = self.get_screen()
-        scr.connect("size-changed", self.on_size_changed)
+        scr.connect("size-changed", self.on_screen_size_changed)
         scr.connect("monitors-changed", self.on_monitors_changed)
         self.set_active_monitor(self.options.screen)
 
@@ -238,7 +238,7 @@ class Screenkey(Gtk.Window):
         self.update_geometry()
 
 
-    def on_monitors_changed(self, *_):
+    def on_monitors_changed(self, monitor):
         self.set_active_monitor(self.monitor)
 
 
@@ -333,12 +333,12 @@ class Screenkey(Gtk.Window):
         return False
 
 
-    def on_configure(self, *_):
+    def on_configure(self, event, data):
         # set event mask for click-through
         self.input_shape_combine_region(cairo.Region(cairo.RectangleInt(0, 0, 0, 0)))
 
 
-    def on_size_changed(self):
+    def on_screen_size_changed(self, screen):
         self.width, self.height = self.get_size()
         self.update_font()
         self.update_image()
