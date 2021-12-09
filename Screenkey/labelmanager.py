@@ -534,17 +534,33 @@ class LabelManager:
         self.data.append(KeyData(datetime.now(), True, True, True, True, value))
         return True
 
-
+    # callback for mouse button presses
     def btn_press(self, event):
         if not self.enabled:
             return False
-
         if event.pressed:
             action = "pressed"
         else:
             action = "released"
         self.logger.debug("Mouse button %d %s" % (event.btn, action))
 
-        self.image_listener(
-            ButtonData(datetime.now(), event.btn, event.pressed)
-        )
+        # possible event.btn values:
+        # 1 = LMB, 2 = MMB (wheel click), 3 = RMB, 4/5 = wheel up/down,
+        # 6/7 = wheel left/right, 8+ extra buttons (e. g. thumb buttons)
+        if event.btn > 7:
+            # image_listener can only handle common buttons, redirect thumb buttons etc. to label
+            if not event.pressed:
+                return False
+            # what we refer to as "Mouse 4" has an internal value of 8,
+            # so we subtract 4 from the btn value
+            markup = GLib.markup_escape_text("M{}".format(event.btn - 4))
+
+            # show as label, treated the same as keyboard button presses
+            self.data.append(KeyData(datetime.now(), False, True,
+                         True, True, markup))
+            self.update_text()
+        else:
+            # show event in image
+            self.image_listener(
+                ButtonData(datetime.now(), event.btn, event.pressed)
+            )
