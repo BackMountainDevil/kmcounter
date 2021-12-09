@@ -4,11 +4,21 @@ screenkey 1.5
 - New LockScreen detection from Marc Lavallée prevents passwords from
   being shown right after unlocking the screen when possible (new
   ``dbus`` dependency required).
+- Keypad number keys are now displayed correctly (thanks to @Gordin508).
+- Additional mouse buttons are now shown as "M[x]" instead of being
+  incorrectly displayed as Ctrl/Alt modifiers (@Gordin508).
+- The new ``--window`` command line flag allows to display screenkey as
+  a regular window instead of an overlay. This can be useful for
+  recording screenkey as an independent overlay during screencasts
+  and/or to manage the window position through the window manager.
 - New German translation thanks to Maik Schmalle.
 - Fix regression that would keep the overlay visible when using Ctrl
   sequences with the mouse visualization disabled.
 - Fix regression causing a backtrace instead of a proper error message
   during initialization errors.
+- Fix crash happening due to screen size and/or resolution changes while
+  screenkey is running.
+- Prettify JSON configuration file (thanks to Mehrad Mahmoudian).
 
 
 screenkey 1.4
