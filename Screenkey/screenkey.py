@@ -661,6 +661,7 @@ class Screenkey(Gtk.Window):
             return True
 
         def on_btn_reset_geom(widget, data=None):
+            self.options.window = False
             self.options.geometry = None
             if self.options.position == 'fixed':
                 self.options.position = 'bottom'
