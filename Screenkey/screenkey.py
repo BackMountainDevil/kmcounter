@@ -1062,7 +1062,7 @@ class Screenkey(Gtk.Window):
                 bus_name = str(dbus_string)
                 if match(r"org\.(\w+)\.ScreenSaver", bus_name):
                     signal_interface = bus_name
-                    self.logger.debug(f"DBUS signal interface found: \"{signal_interface}\" ; password should not show when unlocking the screen.")
+                    self.logger.debug("DBUS signal interface found: \""+signal_interface+"\" ; password should not show when unlocking the screen.")
                     break
 
             if not signal_interface:
@@ -1071,7 +1071,7 @@ class Screenkey(Gtk.Window):
                 DBusGMainLoop(set_as_default=False)
                 return
 
-            session_bus.add_match_string(f"type='signal',interface='{signal_interface}'")
+            session_bus.add_match_string("type='signal',interface='"+signal_interface+"'")
             session_bus.add_message_filter(filter_bus_message)
             mainloop = GLib.MainLoop()
             mainloop.run()
