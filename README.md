@@ -34,6 +34,8 @@ fix 文件不存在不会自动创建的bug
 
 fix 程序在关机时不会自动保存数据的bug
 
+refactor 封装成类，这样接收信号退出的时候就不需要额外传参了
+
 # refer
 
 [Commit message 和 Change log 编写指南  阮一峰 2016年1月 6日](http://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html)
