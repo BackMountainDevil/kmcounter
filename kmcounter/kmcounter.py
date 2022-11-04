@@ -8,8 +8,8 @@ def load_data(fileName="kmdata.json"):
         KMDATA = json.load(dataFile)
         dataFile.close()
         return KMDATA
-    except Exception as e:
-        print(e)
+    except FileNotFoundError:
+        save_data({}, fileName)
         return {}
 
 
@@ -67,7 +67,7 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         print("Error ", KeyboardInterrupt)
 
-        save_data(KMDATA)   # 保存数据到文件中
+        save_data(KMDATA)  # 保存数据到文件中
 
     # check if the thread terminated unexpectedly
     if kl.is_alive():

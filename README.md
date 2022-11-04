@@ -30,6 +30,8 @@ question `glib.main_context_default().iteration()` 不理解作用，尝试去�
 
 开启启动 参阅[Autostarting](https://wiki.archlinux.org/title/Autostarting). 我使用的 XFCE DE, 在设置-启动中添加命令即可，如 `sh -c "sleep 3 && cd /home/mifen/Documents/code/screenkey/kmcounter/ && python kmcounter.py"`，而不是 `python /home/mifen/Documents/code/screenkey/kmcounter/kmcounter.py`，后者会存在路径问题无法识别到 kmdata.json 的问题，`cd /home/mifen/Documents/code/screenkey/kmcounter/ && python kmcounter.py`测试发现没法启动
 
+fix 文件不存在不会自动创建的bug
+
 # refer
 
 [Commit message 和 Change log 编写指南  阮一峰 2016年1月 6日](http://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html)
