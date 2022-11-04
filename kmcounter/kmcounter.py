@@ -2,17 +2,30 @@ from Screenkey.inputlistener import *
 import json
 
 
-KMDATA = {}  # 暂存数据的全局变量
-
-
-if __name__ == "__main__":
+def load_data(fileName="kmdata.json"):
     try:  # 读取文件中 的数据
-        dataFile = open("kmdata.json", "r")
+        dataFile = open(fileName, "r")
         KMDATA = json.load(dataFile)
+        dataFile.close()
+        return KMDATA
+    except Exception as e:
+        print(e)
+        dataFile.close()
+        return {}
+
+
+def save_data(data, fileName="kmdata.json"):
+    try:  # 保存数据到文件
+        dataFile = open(fileName, "w")
+        json.dump(data, dataFile)
         dataFile.close()
     except Exception as e:
         print(e)
         dataFile.close()
+
+
+if __name__ == "__main__":
+    KMDATA = load_data()  # 尝试获取历史数据
 
     def callback(data):
         if isinstance(data, KeyData):  # keyboard event
@@ -56,13 +69,7 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         print("Error ", KeyboardInterrupt)
 
-        try:  # 保存数据到文件
-            dataFile = open("kmdata.json", "w")
-            json.dump(KMDATA, dataFile)
-            dataFile.close()
-        except Exception as e:
-            print(e)
-            dataFile.close()
+        save_data(KMDATA)   # 保存数据到文件中
 
     # check if the thread terminated unexpectedly
     if kl.is_alive():

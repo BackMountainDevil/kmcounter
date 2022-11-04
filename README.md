@@ -19,5 +19,15 @@
 ## 2022.11.4
 
 feature 监听键盘按键按下事件+鼠标按键按下事件
+
 feature 按键次数数据存储到文件
+
+refactor 数据的读取和保存
+
 question `glib.main_context_default().iteration()` 不理解作用，尝试去掉则程序无法正常运行
+
+字母、数字、方向运算符、TAB可以长摁也会累加次数，鼠标按键、shift、ctrl、alt、super 则不会
+
+# refer
+
+[Commit message 和 Change log 编写指南  阮一峰 2016年1月 6日](http://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html)
