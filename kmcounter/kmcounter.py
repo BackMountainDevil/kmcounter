@@ -10,7 +10,6 @@ def load_data(fileName="kmdata.json"):
         return KMDATA
     except Exception as e:
         print(e)
-        dataFile.close()
         return {}
 
 
@@ -21,7 +20,6 @@ def save_data(data, fileName="kmdata.json"):
         dataFile.close()
     except Exception as e:
         print(e)
-        dataFile.close()
 
 
 if __name__ == "__main__":
