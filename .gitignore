@@ -6,3 +6,4 @@
 *.mo
 /dist
 /build
+.vscode/
