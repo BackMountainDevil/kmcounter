@@ -32,6 +32,8 @@ question `glib.main_context_default().iteration()` 不理解作用，尝试去�
 
 fix 文件不存在不会自动创建的bug
 
+fix 程序在关机时不会自动保存数据的bug
+
 # refer
 
 [Commit message 和 Change log 编写指南  阮一峰 2016年1月 6日](http://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html)

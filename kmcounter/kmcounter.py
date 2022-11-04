@@ -1,5 +1,6 @@
 from Screenkey.inputlistener import *
 import json
+import signal
 
 
 def load_data(fileName="kmdata.json"):
@@ -24,6 +25,14 @@ def save_data(data, fileName="kmdata.json"):
 
 if __name__ == "__main__":
     KMDATA = load_data()  # 尝试获取历史数据
+
+    def signal_handler(signum, frame):
+        signame = signal.Signals(signum).name
+        print(f"Signal handler called with signal {signame} ({signum})")
+
+        global KMDATA
+        save_data(KMDATA)  # 存一下数据，程序就要关闭了
+        exit(0)  # 结束程序，TODO
 
     def callback(data):
         if isinstance(data, KeyData):  # keyboard event
@@ -58,6 +67,7 @@ if __name__ == "__main__":
             print("unhandled event type {}".format(type(data)))
 
     kl = InputListener(callback, InputType.keyboard | InputType.button)
+    signal.signal(signal.SIGTERM, signal_handler)  # 注册 SIGTERM 信号回调函数
 
     try:
         # keep running only while the listener is alive
