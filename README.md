@@ -19,5 +19,5 @@
 ## 2022.11.4
 
 feature 监听键盘按键按下事件+鼠标按键按下事件
-
+feature 按键次数数据存储到文件
 question `glib.main_context_default().iteration()` 不理解作用，尝试去掉则程序无法正常运行
