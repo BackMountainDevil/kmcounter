@@ -12,10 +12,22 @@
 │   ├── screenkey.py    主程序，运行后可以显示按下的按键、鼠标点击和滚动
 │   └── xlib.py 通过 x11 获取输入
 ├── setup.cfg
-└── setup.py
+├── setup.py
+├── kmdata.json	:	static data
+└── kmcounter.py	:	main code
 ```
 
+# Install
+
+1. install screenkey(v1.5+) or clone screenkey source code
+2. if install screenkey, just get kmcounter.py; If clone screenkey source code, get kmcounter.py and put it into screenkey like file tree above.
+3. set kmcounter.py autostart. static data will be stored in kmdata.json.
+
 # Change Log
+## 2022.11.5
+
+refactor 将代码移动到上层目录，解决未安装 screenkey 时无法允许代码的bug
+
 ## 2022.11.4
 
 feature 监听键盘按键按下事件+鼠标按键按下事件
@@ -35,6 +47,7 @@ fix 文件不存在不会自动创建的bug
 fix 程序在关机时不会自动保存数据的bug
 
 refactor 封装成类，这样接收信号退出的时候就不需要额外传参了
+
 
 # refer
 
