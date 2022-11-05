@@ -80,3 +80,15 @@ shutdown 是指向 systemctl 的动态链接，systemctl 是可执行文件，�
 > nohup java -jar yourProject.jar >/dev/null 2>log &   
 > 什么信息也不要   
 > nohup java -jar yourProject.jar >/dev/null 2>&1 & 
+
+## similar program
+
+[screenkey](https://gitlab.com/screenkey/screenkey):在屏幕上显示当前按键。keysms.py 中有 `function` 这一行，但是我按下的时候并没有显示出来。super\alt\shift，在偏好设置里打开显示shift，然后显示Mouse才可以看到shift、alt、ctrl。从xlib.py中可以看出来是通过x11的库读取的输入。
+
+[AlynxZhou/showmethekey](https://github.com/AlynxZhou/showmethekey): screenkey 替代方案, 适配 X11 和 Wayland.通过 libinput 获取用户输入。需要root权限，使用上不如screenkey开箱即用，也没心思继续搞懂怎么用。
+
+[KMCounter](https://github.com/telppa/KMCounter):ahk 开源 windows 脚本。功能和界面优秀，commit message 写的一塌糊涂。推出程序时 SaveData 通过 IniWrite 将数据存储到文件（KMCounter.ini）中
+
+[whatpulse](https://whatpulse.org/):闭源，支持三大os。除了记录键盘、还会记录网络传输，隐私协议中收集匿名数据，统计界面看起来更炫酷
+
+[Mousotron : Mouse and keyboard activity monitor](https://www.blacksunsoftware.com/mousotron.html):Windows 7/8/10，闭源 5$，界面看起来很上古
