@@ -28,6 +28,8 @@
 
 refactor 将代码移动到上层目录，解决未安装 screenkey 时无法允许代码的bug
 
+autostart 路径因此有所变化：`sh -c "sleep 3 && cd /home/mifen/Documents/code/kmcounter/ && python kmcounter.py"`
+
 ## 2022.11.4
 
 feature 监听键盘按键按下事件+鼠标按键按下事件
