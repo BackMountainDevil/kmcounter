@@ -45,6 +45,9 @@ class KMCounter(InputListener):
             print("load kmdata from  ", self.kmdata_file)
         except FileNotFoundError:
             print("kmdata file not found  ", self.kmdata_file)
+        except Exception as ex: # 其它未知错误，比如 JSONDecodeError
+            print("Exception:", repr(ex))
+        finally:
             self.save_data()
 
     def save_data(self):
