@@ -24,11 +24,14 @@
 3. set kmcounter.py autostart. static data will be stored in kmdata.json.
 
 # Change Log
-## 2022.11.5
+## 2022.11.22
 
+因查阅日志发现本程序的输出占了太大篇幅，因此只留出程序的错误输出。autostart 路径：`sh -c "sleep 3 && cd /home/mifen/Documents/code/kmcounter/ && nohup python kmcounter.py >/dev/null 2>log & "`
+
+## 2022.11.5
 refactor 将代码移动到上层目录，解决未安装 screenkey 时无法允许代码的bug
 
-autostart 路径因此有所变化：`sh -c "sleep 3 && cd /home/mifen/Documents/code/kmcounter/ && python kmcounter.py"`
+autostart 路径因此有所变化：`sh -c "sleep 3 && cd /home/mifen/Documents/code/kmcounter/ && nohup python kmcounter.py >/dev/null 2>log & "`
 
 ## 2022.11.4
 

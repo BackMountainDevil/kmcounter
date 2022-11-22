@@ -73,17 +73,17 @@ class KMCounter(InputListener):
                 return
             symbol = data.symbol.decode()
             if data.pressed:
-                print("Key pressed {:5}(ks): {}".format(data.keysym, symbol))
+                # print("Key pressed {:5}(ks): {}".format(data.keysym, symbol))
 
                 if symbol in self.kmdata:  # 更新数据
                     self.kmdata[symbol] = self.kmdata[symbol] + 1
                 else:
                     self.kmdata[symbol] = 1
-                print(self.kmdata)
+                # print(self.kmdata)
 
         elif isinstance(data, ButtonData):  # mouse_btn event
             if data.pressed:
-                print("Mouse button pressed %d" % (data.btn))
+                # print("Mouse button pressed %d" % (data.btn))
 
                 # 鼠标的按键没有 keysym 和对应的 symbol，采取组合办法
                 symbol = "mbtn" + str(data.btn)
