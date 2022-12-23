@@ -3,7 +3,7 @@ import json
 def getColor(x,min,max):
     return hex(int(65535 + (x-min) * ((16646145) / (max-min))))
 
-kmdataFile = "kmdata.json"  # 默认保存的数据文件
+kmdataFile = "kmdata2.json"  # 默认保存的数据文件
 colorFile = "kcolor.json"
 
 try:  # 读取文件中 的数据
@@ -16,12 +16,12 @@ try:  # 读取文件中 的数据
     kmin=min(kmdata.items(), key = lambda x: x[1])
     print(kmax,type(kmax),kmin,type(kmdata))
 
+    kcdata={}   # 存储颜色数据
     for k,v in kmdata.items():
-        kmdata[k]=getColor(v, kmin[1], kmax[1])
-    # print(kmdata)
+        kcdata[k.upper()]=getColor(v, kmin[1], kmax[1])
 
-    dataFile = open(colorFile, "w")
-    json.dump(kmdata, dataFile)
+    dataFile = open(colorFile, "w") # 颜色数据保存到文件
+    json.dump(kcdata, dataFile)
     dataFile.close()
     print("kcolor has been saved to ", colorFile)
 except FileNotFoundError:
