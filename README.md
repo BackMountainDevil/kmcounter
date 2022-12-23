@@ -24,6 +24,16 @@
 3. set kmcounter.py autostart. static data will be stored in kmdata.json.
 
 # Change Log
+## 2022.12.23
+
+默认布局按键底色为 #cccccc，我将按下次数最少的颜色定义为 #00ffff，次数最多的颜色定义为 #ff0000，那么以按键次数为自变量、颜色为因变量的一次方程为
+
+    f(x) = 0x00ffff + (x-min) * ((0xff0000-0x00ffff) / (max-min))
+        = 65535 + (x-min) * ((16711680-65535) / (max-min))
+        = 65535 + (x-min) * ((16646145) / (max-min))
+
+[Python max()方法扩展：求字典中值最大的键 千鱼千寻 2020-09-14](https://www.cnblogs.com/QianyuQian/p/13667965.html)
+
 ## 2022.11.22
 
 因查阅日志发现本程序的输出占了太大篇幅，因此只留出程序的错误输出。autostart 路径：`sh -c "sleep 3 && cd /home/mifen/Documents/code/kmcounter/ && nohup python kmcounter.py >/dev/null 2>log & "`
