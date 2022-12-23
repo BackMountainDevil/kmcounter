@@ -56,6 +56,8 @@ refactor 封装成类，这样接收信号退出的时候就不需要额外传�
 
 # refer
 
+[https://github.com/ijprest/keyboard-layout-editor](http://www.keyboard-layout-editor.com/)
+
 [Commit message 和 Change log 编写指南  阮一峰 2016年1月 6日](http://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html)
 
 ## signal
